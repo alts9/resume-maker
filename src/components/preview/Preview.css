@@ -1,0 +1,7 @@
+.preview {
+  width: 210mm;
+  flex-basis: 210px;
+  height: 297mm;
+  margin: 0px;
+  border: 1px solid hsla(0, 100%, 50%, 0);
+}

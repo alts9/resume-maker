@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { userResume } from "./modules/SampleObject";
+import logo from "./logo.svg";
+import "./App.css";
+import Form from "./components/form/Form";
+import Preview from "./components/preview/Preview";
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const [resume, SetResume] = useState(userResume);
+  function updateBio(variable, value) {
+    const newResume = { ...resume };
+    newResume.bio[variable] = value;
+    SetResume(newResume);
+  }
+
+  function updateContact(id, variable, value) {
+    const newResume = { ...resume };
+    newResume.contact[id][variable] = value;
+    SetResume(newResume);
+    // console.log(resume.contact[id]);
+  }
+  // console.log(resume.contact[0]);
+
+  React.useEffect(() => {
+    updateContact(0, "icon", "sdsdsd");
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        {" "}
+        <Form resume={resume} updateBio={(updateBio, updateContact)} />
+        <Preview resume={resume} />
+      </div>
+    </>
   );
 }
 
