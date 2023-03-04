@@ -1,7 +1,71 @@
-.preview {
+.preview-container {
   width: 210mm;
-  flex-basis: 210px;
   height: 297mm;
   margin: 0px;
-  border: 1px solid hsla(0, 100%, 50%, 0);
+  border: 1px solid hsla(0, 100%, 50%, 0.2);
+}
+
+.resume-content {
+  height: 275mm;
+  width: 181mm;
+  margin: 36px 55px;
+  font-family: "Open Sans", sans-serif;
+  border: 1px solid red;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+.header {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+
+  border-bottom: 3px solid black;
+}
+
+.header .name {
+  font-weight: 600;
+  font-size: 57px;
+  padding-top: 39px;
+  letter-spacing: 13px;
+}
+
+.header .jobTitle {
+  padding-top: 22px;
+  padding-bottom: 30px;
+  letter-spacing: 5px;
+  font-size: 14px;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px;
+  font-size: 13px;
+  align-items: center;
+  border-bottom: 3px solid black;
+}
+
+.phone-icon {
+  height: 11px;
+  position: relative;
+  top: 1px;
+}
+
+.envelope-icon {
+  height: 12px;
+  position: relative;
+  top: 2px;
+}
+
+.house-icon {
+  height: 12px;
+  position: relative;
+  top: 1px;
+}
+
+.linkedIn-icon {
+  height: 14px;
+  position: relative;
+  top: 2px;
 }

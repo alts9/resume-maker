@@ -7,7 +7,9 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [resume, SetResume] = useState(userResume);
+
   function updateBio(variable, value) {
+    console.log(variable, value);
     const newResume = { ...resume };
     newResume.bio[variable] = value;
     SetResume(newResume);
@@ -17,18 +19,26 @@ function App() {
     const newResume = { ...resume };
     newResume.contact[id][variable] = value;
     SetResume(newResume);
-    // console.log(resume.contact[id]);
   }
-  // console.log(resume.contact[0]);
 
-  React.useEffect(() => {
-    updateContact(0, "icon", "sdsdsd");
-  }, []);
+  function updateContactIcon(contactId, newIconId, newIconClass) {
+    const newResume = { ...resume };
+    newResume.contact[contactId].iconid = newIconId;
+    newResume.contact[contactId].iconName = newIconClass;
+    SetResume(newResume);
+    console.log(resume.contact);
+  }
+
   return (
     <>
       <div className="container">
         {" "}
-        <Form resume={resume} updateBio={(updateBio, updateContact)} />
+        <Form
+          resume={resume}
+          updateBio={updateBio}
+          updateContact={updateContact}
+          updateContactIcon={updateContactIcon}
+        />
         <Preview resume={resume} />
       </div>
     </>

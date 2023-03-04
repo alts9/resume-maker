@@ -7,9 +7,10 @@ class Bio {
 }
 
 class ContactItem {
-  constructor(id, icon, data, link) {
+  constructor(id, iconid, iconName, data, link) {
     this.id = id;
-    this.icon = icon;
+    this.iconid = iconid;
+    this.iconName = iconName;
     this.data = data;
     this.link = link;
   }

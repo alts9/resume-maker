@@ -1,12 +1,11 @@
 import React from "react";
 
-function Bio({ bio, updateBio }) {
+function FormBio({ bio, updateBio }) {
   function handleChange(e) {
     updateBio(e.target.name, e.target.value);
   }
   return (
     <>
-      <div>Form</div>
       <div className=""> </div>
       <label>
         Name:
@@ -33,4 +32,4 @@ function Bio({ bio, updateBio }) {
   );
 }
 
-export default Bio;
+export default FormBio;

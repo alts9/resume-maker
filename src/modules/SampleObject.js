@@ -9,14 +9,20 @@ import {
   Reference,
 } from "./Object";
 
-let phoneContact = new ContactItem(1, "phone", "+081 234 5678", "");
-let emailContact = new ContactItem(2, "email", "JohnJohn@mail.com", "");
-let addressContact = new ContactItem(3, "address", "Austin, TX", "");
+let phoneContact = new ContactItem(0, 0, "phone-icon", "+081 234 5678", "");
+let emailContact = new ContactItem(
+  1,
+  1,
+  "envelope-icon",
+  "JohnJohn@mail.com"
+);
+let addressContact = new ContactItem(2, 2, "house-icon", "Austin, TX", "");
 let linkedInContact = new ContactItem(
-  4,
-  "linkedIn",
-  "john_john123",
-  "https://www.linkedin.com/in/john_john123"
+  3,
+  3,
+  "linkedIn-icon",
+  "John_john123",
+  "https://www.linkedin.com/in/John_john123"
 );
 
 // let userBio = new Bio("John", "Programmer", [
@@ -26,7 +32,7 @@ let linkedInContact = new ContactItem(
 //   linkedInContact,
 // ]);
 
-let userBio = new Bio("John", "Programmer");
+let userBio = new Bio("Ellie Carter", "Production Manager");
 
 let userContact = [phoneContact, emailContact, addressContact, linkedInContact];
 
