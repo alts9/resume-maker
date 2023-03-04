@@ -1,98 +1,45 @@
-import {
-  Resume,
-  ContactItem,
-  Bio,
-  Profile,
-  Info,
-  List,
-  Experience,
-  Reference,
-} from "./Object";
+const userBio = { name: "Ellie Carter", jobTitle: "Production Manager" };
 
-let phoneContact = new ContactItem(0, 0, "phone-icon", "+081 234 5678", "");
-let emailContact = new ContactItem(
-  1,
-  1,
-  "envelope-icon",
-  "JohnJohn@mail.com"
-);
-let addressContact = new ContactItem(2, 2, "house-icon", "Austin, TX", "");
-let linkedInContact = new ContactItem(
-  3,
-  3,
-  "linkedIn-icon",
-  "John_john123",
-  "https://www.linkedin.com/in/John_john123"
-);
+const phoneContact = {
+  id: 0,
+  iconid: 0,
+  iconName: "phone-icon",
+  data: "+081 234 5678",
+  link: "",
+};
 
-// let userBio = new Bio("John", "Programmer", [
-//   phoneContact,
-//   emailContact,
-//   addressContact,
-//   linkedInContact,
-// ]);
+const emailContact = {
+  id: 1,
+  iconid: 1,
+  iconName: "envelope-icon",
+  data: "elliecarter@mail.com",
+  link: "",
+};
 
-let userBio = new Bio("Ellie Carter", "Production Manager");
+const houseContact = {
+  id: 2,
+  iconid: 2,
+  iconName: "house-icon",
+  data: "Austin, TX",
+  link: "",
+};
 
-let userContact = [phoneContact, emailContact, addressContact, linkedInContact];
+const linkedInContact = {
+  id: 3,
+  iconid: 3,
+  iconName: "linkedIn-icon",
+  data: "/in/ellie_carter",
+  link: "https://www.linkedin.com/in/John_john123",
+};
 
-let userProfile = new Profile(
-  "I am a talented, ambitious and hardworking individual, with broad skills and experience in digital and printed marketing, social media and leading projects."
-);
+const userContact = [phoneContact, emailContact, houseContact, linkedInContact];
 
-let educationInfo = new Info("Education", [
-  {
-    name: "Bachelor of Information Technology",
-    institution: "Stanford University",
-    yearStart: 2012,
-    yearEnd: 2016,
-  },
-  {
-    name: "Master of Information Technology",
-    institution: "Stanford University",
-    yearStart: 2016,
-    yearEnd: 2018,
-  },
-]);
+const userProfile = {
+  profileSummary:
+    " Write few sentences about yourself. Start with years of experience or education. Put skills that will be able to contribute to the specific job. Bonus point if you have relevant particular specialty and achievement. Convince them you're the best choice. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+};
 
-let skillList = new List("Skill", [
-  ["Microsoft Word", "Beginner"],
-  ["Microsoft Excel", "Intermediate"],
-  ["Microsoft PowerPoint", "Intermediate"],
-]);
-
-let userExperience1 = new Experience(
-  "Junior Programmer",
-  "ABC Corp",
-  "new York",
-  2016,
-  2018,
-  "Create secure and functional code",
-  [
-    "Formulate program specifications and basic prototypes",
-    "Integrate individual software solutions to higher level systems",
-    "Use web-based tools to create advanced SaaS when applicable",
-  ]
-);
-
-let userReference1 = new Reference(
-  "David",
-  "Senior Programmer",
-  "Company ABC",
-  "0811111111",
-  "david@mail.com"
-);
-
-let userResume = new Resume(
-  userBio,
-  userContact,
-  userProfile,
-
-  [educationInfo]
-  // [skillList],
-  // [userExperience1],
-  // [userReference1]
-);
+const userResume = { bio: userBio, contact: userContact, profile: userProfile };
 
 // console.log(userResume);
 
