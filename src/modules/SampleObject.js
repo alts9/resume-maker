@@ -58,11 +58,43 @@ const educationInfo = {
   items: [education1, education2],
 };
 
+const language1 = { name: "English", proficiency: "Native Speaker" };
+const language2 = { name: "Spanish", proficiency: "Basic" };
+
+const languageList = {
+  type: "list",
+  name: "language",
+  proficiency: "level", //none/score/level
+  items: [language1, language2],
+};
+
+const softSkillList = {
+  type: "list",
+  name: "softSkill",
+  proficiency: "none", //none/score/level
+  items: [
+    "Project management",
+    "Problem-solving",
+    "Critical thinking",
+    "Decision making",
+  ],
+};
+
+const software1 = { name: "Microsoft Word", proficiency: "4" };
+const software2 = { name: "Microsoft Excel", proficiency: "2" };
+
+const softwareList = {
+  type: "list",
+  name: "software",
+  proficiency: "score", //none/score/level
+  items: [software1, software2],
+};
+
 const userResume = {
   bio: userBio,
   contact: userContact,
   profile: userProfile,
-  leftContent: [educationInfo],
+  leftContent: [educationInfo, languageList, softSkillList, softwareList],
 };
 
 // console.log(userResume);

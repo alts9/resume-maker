@@ -96,7 +96,7 @@ section .spacer {
 
 .container {
   display: flex;
-  padding-top: 37px;
+  margin-top: 30px;
   padding-bottom: 22px;
 }
 
@@ -112,9 +112,16 @@ section .spacer {
   padding-left: 30px;
 }
 
+.info-container {
+  padding-top: 30px;
+}
+
+.left-container section:first-child {
+  padding-top: 0px;
+}
+
 .info-container .info-item {
   padding-top: 16px;
-  padding-bottom: 7px;
   font-size: 13px;
 }
 
@@ -128,4 +135,70 @@ section .spacer {
 
 .info-container .info-item .year {
   padding-top: 3px;
+}
+
+.list-container {
+  padding-top: 30px;
+}
+
+.list-container .list-item-container {
+  padding-left: 15px;
+  margin: 0px;
+  padding-top: 5px;
+}
+
+.list-container .list-item-container .list-item:first-child {
+  padding-top: 16px;
+}
+
+.list-container .list-item-container .list-item {
+  font-size: 13px;
+  padding-left: 0px;
+  margin: 0px;
+  padding-top: 10px;
+}
+
+.list-container .list-item-container .list-item .name {
+  padding-bottom: 2px;
+}
+
+.list-container .list-item-container .list-item .level-proficiency {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.list-item .proficiency-bar-container {
+  width: 100px;
+  height: 4px;
+  border: 1px solid black;
+  margin-top: 2px;
+}
+
+.proficiency-bar-fill {
+  background-color: black;
+  height: 4px;
+}
+
+.list-item .proficiency-bar-container .width-0 {
+  width: 0px;
+}
+
+.list-item .proficiency-bar-container .width-1 {
+  width: 20px;
+}
+
+.list-item .proficiency-bar-container .width-2 {
+  width: 40px;
+}
+
+.list-item .proficiency-bar-container .width-3 {
+  width: 60px;
+}
+
+.list-item .proficiency-bar-container .width-4 {
+  width: 80px;
+}
+
+.list-item .proficiency-bar-container .width-5 {
+  width: 100px;
 }

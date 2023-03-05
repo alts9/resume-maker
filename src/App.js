@@ -50,7 +50,7 @@ function App() {
   //   updateInfoItem(0, 1, "institution", "asdf");
   //   console.log(resume.leftContent[0].items[1]);
   // }, []);
-  console.log(resume.leftContent[0].items[1]);
+  // console.log(resume.leftContent);
   return (
     <>
       <div className="main-container">

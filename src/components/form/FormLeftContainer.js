@@ -16,6 +16,7 @@ function FormLeftContainer({ contents, updateInfoTitle, updateInfoItem }) {
               updateInfoItem={updateInfoItem}
             />
           );
+        } else if (content.type === "list") {
         }
       })}
     </>
