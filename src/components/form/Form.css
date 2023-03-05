@@ -5,3 +5,10 @@
 .form-group div {
   padding-bottom: 5px;
 }
+
+.form-container {
+  overflow-y: scroll;
+  flex-basis: 200px;
+  flex-shrink: 0;
+  flex-grow: 1;
+}

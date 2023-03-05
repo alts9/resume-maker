@@ -1,6 +1,6 @@
 import React from "react";
 
-function Bio({ bio }) {
+function PreviewBio({ bio }) {
   return (
     <>
       <div className="name">{bio.name}</div>
@@ -9,4 +9,4 @@ function Bio({ bio }) {
   );
 }
 
-export default Bio;
+export default PreviewBio;

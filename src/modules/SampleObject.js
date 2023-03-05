@@ -39,7 +39,31 @@ const userProfile = {
     " Write few sentences about yourself. Start with years of experience or education. Put skills that will be able to contribute to the specific job. Bonus point if you have relevant particular specialty and achievement. Convince them you're the best choice. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
 };
 
-const userResume = { bio: userBio, contact: userContact, profile: userProfile };
+const education1 = {
+  name: "Bachelor of Information Technology",
+  institution: "Stanford University",
+  yearStart: 2012,
+  yearEnd: 2016,
+};
+const education2 = {
+  name: "Master of Information Technology",
+  institution: "Stanford University",
+  yearStart: 2016,
+  yearEnd: 2018,
+};
+
+const educationInfo = {
+  type: "info",
+  name: "education",
+  items: [education1, education2],
+};
+
+const userResume = {
+  bio: userBio,
+  contact: userContact,
+  profile: userProfile,
+  leftContent: [educationInfo],
+};
 
 // console.log(userResume);
 

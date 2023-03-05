@@ -8,16 +8,15 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [resume, SetResume] = useState(userResume);
 
-  function updateBio(variable, value) {
-    console.log(variable, value);
+  function updateBio(variable, newValue) {
     const newResume = { ...resume };
-    newResume.bio[variable] = value;
+    newResume.bio[variable] = newValue;
     SetResume(newResume);
   }
 
-  function updateContact(id, variable, value) {
+  function updateContact(id, property, newValue) {
     const newResume = { ...resume };
-    newResume.contact[id][variable] = value;
+    newResume.contact[id][property] = newValue;
     SetResume(newResume);
   }
 
@@ -29,15 +28,41 @@ function App() {
     console.log(resume.contact);
   }
 
+  function updateProfile(newValue) {
+    const newResume = { ...resume };
+    newResume.profile.profileSummary = newValue;
+    SetResume(newResume);
+  }
+
+  function updateInfoTitle(index, newValue) {
+    const newResume = { ...resume };
+    newResume.leftContent[index].name = newValue;
+    SetResume(newResume);
+  }
+
+  function updateInfoItem(infoIndex, itemIndex, property, newValue) {
+    const newResume = { ...resume };
+    newResume.leftContent[infoIndex].items[itemIndex][property] = newValue;
+    SetResume(newResume);
+  }
+
+  // useEffect(() => {
+  //   updateInfoItem(0, 1, "institution", "asdf");
+  //   console.log(resume.leftContent[0].items[1]);
+  // }, []);
+  console.log(resume.leftContent[0].items[1]);
   return (
     <>
-      <div className="container">
+      <div className="main-container">
         {" "}
         <Form
           resume={resume}
           updateBio={updateBio}
           updateContact={updateContact}
           updateContactIcon={updateContactIcon}
+          updateProfile={updateProfile}
+          updateInfoTitle={updateInfoTitle}
+          updateInfoItem={updateInfoItem}
         />
         <Preview resume={resume} />
       </div>

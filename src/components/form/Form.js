@@ -1,9 +1,19 @@
 import React from "react";
+import "./Form.css";
 import FormBio from "./FormBio";
 import FormContact from "./FormContact";
-import "./Form.css";
+import FormProfile from "./FormProfile";
+import FormLeftContainer from "./FormLeftContainer";
 
-function Form({ resume, updateBio, updateContact, updateContactIcon }) {
+function Form({
+  resume,
+  updateBio,
+  updateContact,
+  updateContactIcon,
+  updateProfile,
+  updateInfoTitle,
+  updateInfoItem,
+}) {
   return (
     <>
       <div className="form-container">
@@ -24,6 +34,16 @@ function Form({ resume, updateBio, updateContact, updateContactIcon }) {
               />
             );
           })}
+        </div>
+        <div className="form-profile">
+          <FormProfile profile={resume.profile} updateProfile={updateProfile} />
+        </div>
+        <div className="form-left-container">
+          <FormLeftContainer
+            contents={resume.leftContent}
+            updateInfoTitle={updateInfoTitle}
+            updateInfoItem={updateInfoItem}
+          />
         </div>
       </div>{" "}
     </>
