@@ -1,7 +1,7 @@
 import React from "react";
 
-function PreviewList({ item, proficiency }) {
-  if (proficiency === "level") {
+function PreviewList({ item, proficiencyType }) {
+  if (proficiencyType === "level") {
     return (
       <>
         <li className="list-item">
@@ -10,7 +10,7 @@ function PreviewList({ item, proficiency }) {
         </li>
       </>
     );
-  } else if (proficiency === "none") {
+  } else if (proficiencyType === "none") {
     return (
       <>
         <li className="list-item">
@@ -18,7 +18,7 @@ function PreviewList({ item, proficiency }) {
         </li>
       </>
     );
-  } else if (proficiency === "score") {
+  } else if (proficiencyType === "score") {
     const className = "proficiency-bar-fill width-" + item.proficiency;
     return (
       <>

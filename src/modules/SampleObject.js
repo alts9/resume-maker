@@ -64,14 +64,14 @@ const language2 = { name: "Spanish", proficiency: "Basic" };
 const languageList = {
   type: "list",
   name: "language",
-  proficiency: "level", //none/score/level
+  proficiencyType: "level", //none/score/level
   items: [language1, language2],
 };
 
 const softSkillList = {
   type: "list",
   name: "softSkill",
-  proficiency: "none", //none/score/level
+  proficiencyType: "none", //none/score/level
   items: [
     "Project management",
     "Problem-solving",
@@ -86,7 +86,7 @@ const software2 = { name: "Microsoft Excel", proficiency: "2" };
 const softwareList = {
   type: "list",
   name: "software",
-  proficiency: "score", //none/score/level
+  proficiencyType: "score", //none/score/level
   items: [software1, software2],
 };
 

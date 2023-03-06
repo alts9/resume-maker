@@ -1,29 +1,31 @@
 import React from "react";
-import FormInfo from "./FormInfo";
+import FormList from "./FormList";
 
-function FormInfos({ id, info, updateTitle, updateInfoItem }) {
+function FormLists({ id, list, updateTitle, updateListItem }) {
   function handleTitleChange(e) {
     updateTitle(id, e.target.value);
   }
   return (
     <>
+      {" "}
       <label>
-        Info Name:
+        List Name:
         <input
           type="text"
           name="name"
           onChange={handleTitleChange}
-          defaultValue={info.name}
+          defaultValue={list.name}
         />
       </label>
-      {info.items.map((item, index) => {
+      {list.items.map((item, index) => {
         return (
-          <FormInfo
+          <FormList
             key={index}
             itemId={index}
+            proficiencyType={list.proficiencyType}
             item={item}
-            updateInfoItem={updateInfoItem}
-            infoId={id}
+            listId={id}
+            updateListItem={updateListItem}
           />
         );
       })}
@@ -31,4 +33,4 @@ function FormInfos({ id, info, updateTitle, updateInfoItem }) {
   );
 }
 
-export default FormInfos;
+export default FormLists;

@@ -1,7 +1,13 @@
 import React from "react";
 import FormInfos from "./FormInfos";
+import FormLists from "./FormLists";
 
-function FormLeftContainer({ contents, updateInfoTitle, updateInfoItem }) {
+function FormLeftContainer({
+  contents,
+  updateTitle,
+  updateInfoItem,
+  updateListItem,
+}) {
   return (
     <>
       <div>FormLeftContainer</div>
@@ -12,11 +18,20 @@ function FormLeftContainer({ contents, updateInfoTitle, updateInfoItem }) {
               key={index}
               id={index}
               info={content}
-              updateInfoTitle={updateInfoTitle}
+              updateTitle={updateTitle}
               updateInfoItem={updateInfoItem}
             />
           );
         } else if (content.type === "list") {
+          return (
+            <FormLists
+              key={index}
+              id={index}
+              list={content}
+              updateTitle={updateTitle}
+              updateListItem={updateListItem}
+            />
+          );
         }
       })}
     </>

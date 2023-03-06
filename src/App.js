@@ -34,7 +34,8 @@ function App() {
     SetResume(newResume);
   }
 
-  function updateInfoTitle(index, newValue) {
+  //for info & list component
+  function updateTitle(index, newValue) {
     const newResume = { ...resume };
     newResume.leftContent[index].name = newValue;
     SetResume(newResume);
@@ -46,11 +47,31 @@ function App() {
     SetResume(newResume);
   }
 
+  function updateListItem(
+    listIndex,
+    itemIndex,
+    proficiencyType,
+    property,
+    newValue
+  ) {
+    const newResume = { ...resume };
+    if (proficiencyType === "none") {
+      newResume.leftContent[listIndex].items[itemIndex] = newValue;
+    } else if (proficiencyType === "level") {
+      newResume.leftContent[listIndex].items[itemIndex][property] = newValue;
+    } else if (proficiencyType === "score") {
+      newResume.leftContent[listIndex].items[itemIndex][property] = newValue;
+    }
+    SetResume(newResume);
+  }
+  // updateListItem(2, 0, "none", "", "test");
+  // updateListItem(1, 0, "level", "proficiency", "test");
+  //updateListItem(3, 0, "score", "proficiency", "5");
+
   // useEffect(() => {
-  //   updateInfoItem(0, 1, "institution", "asdf");
-  //   console.log(resume.leftContent[0].items[1]);
+  //   updateListItem(3, 0, "score", "proficiency", "5");
   // }, []);
-  // console.log(resume.leftContent);
+  console.log(resume.leftContent[1].items[0]);
   return (
     <>
       <div className="main-container">
@@ -61,8 +82,9 @@ function App() {
           updateContact={updateContact}
           updateContactIcon={updateContactIcon}
           updateProfile={updateProfile}
-          updateInfoTitle={updateInfoTitle}
+          updateTitle={updateTitle}
           updateInfoItem={updateInfoItem}
+          updateListItem={updateListItem}
         />
         <Preview resume={resume} />
       </div>

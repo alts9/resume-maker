@@ -2,7 +2,6 @@ import React from "react";
 import PreviewList from "./PreviewList";
 
 function PreviewLists({ list }) {
-  console.log(list);
   return (
     <>
       <section className="list-container">
@@ -14,7 +13,7 @@ function PreviewLists({ list }) {
               <PreviewList
                 key={id}
                 item={item}
-                proficiency={list.proficiency}
+                proficiencyType={list.proficiencyType}
               />
             );
           })}

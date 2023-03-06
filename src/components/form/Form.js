@@ -11,13 +11,14 @@ function Form({
   updateContact,
   updateContactIcon,
   updateProfile,
-  updateInfoTitle,
+  updateTitle,
   updateInfoItem,
+  updateListItem,
 }) {
   return (
     <>
       <div className="form-container">
-        <div className="form-bio form-group">
+        {/* <div className="form-bio form-group">
           <div className="form-header">Bio</div>
           <FormBio bio={resume.bio} updateBio={updateBio} />
         </div>
@@ -37,12 +38,13 @@ function Form({
         </div>
         <div className="form-profile">
           <FormProfile profile={resume.profile} updateProfile={updateProfile} />
-        </div>
+        </div> */}
         <div className="form-left-container">
           <FormLeftContainer
             contents={resume.leftContent}
-            updateInfoTitle={updateInfoTitle}
+            updateTitle={updateTitle}
             updateInfoItem={updateInfoItem}
+            updateListItem={updateListItem}
           />
         </div>
       </div>{" "}
