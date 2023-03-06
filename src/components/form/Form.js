@@ -4,6 +4,7 @@ import FormBio from "./FormBio";
 import FormContact from "./FormContact";
 import FormProfile from "./FormProfile";
 import FormLeftContainer from "./FormLeftContainer";
+import FormRightContainer from "./FormRightContainer";
 
 function Form({
   resume,
@@ -14,6 +15,8 @@ function Form({
   updateTitle,
   updateInfoItem,
   updateListItem,
+  updateExperienceInfo,
+  updateExperienceList,
 }) {
   return (
     <>
@@ -39,12 +42,19 @@ function Form({
         <div className="form-profile">
           <FormProfile profile={resume.profile} updateProfile={updateProfile} />
         </div> */}
-        <div className="form-left-container">
+        {/* <div className="form-left-container">
           <FormLeftContainer
-            contents={resume.leftContent}
+            contents={resume.leftContents}
             updateTitle={updateTitle}
             updateInfoItem={updateInfoItem}
             updateListItem={updateListItem}
+          />
+        </div> */}
+        <div className="form-right-container">
+          <FormRightContainer
+            contents={resume.rightContents}
+            updateExperienceInfo={updateExperienceInfo}
+            updateExperienceList={updateExperienceList}
           />
         </div>
       </div>{" "}

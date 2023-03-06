@@ -37,13 +37,13 @@ function App() {
   //for info & list component
   function updateTitle(index, newValue) {
     const newResume = { ...resume };
-    newResume.leftContent[index].name = newValue;
+    newResume.leftContents[index].name = newValue;
     SetResume(newResume);
   }
 
   function updateInfoItem(infoIndex, itemIndex, property, newValue) {
     const newResume = { ...resume };
-    newResume.leftContent[infoIndex].items[itemIndex][property] = newValue;
+    newResume.leftContents[infoIndex].items[itemIndex][property] = newValue;
     SetResume(newResume);
   }
 
@@ -56,22 +56,46 @@ function App() {
   ) {
     const newResume = { ...resume };
     if (proficiencyType === "none") {
-      newResume.leftContent[listIndex].items[itemIndex] = newValue;
+      newResume.leftContents[listIndex].items[itemIndex] = newValue;
     } else if (proficiencyType === "level") {
-      newResume.leftContent[listIndex].items[itemIndex][property] = newValue;
+      newResume.leftContents[listIndex].items[itemIndex][property] = newValue;
     } else if (proficiencyType === "score") {
-      newResume.leftContent[listIndex].items[itemIndex][property] = newValue;
+      newResume.leftContents[listIndex].items[itemIndex][property] = newValue;
     }
     SetResume(newResume);
   }
-  // updateListItem(2, 0, "none", "", "test");
-  // updateListItem(1, 0, "level", "proficiency", "test");
-  //updateListItem(3, 0, "score", "proficiency", "5");
 
+  function updateExperienceInfo(
+    experienceIndex,
+    itemIndex,
+    property,
+    newValue
+  ) {
+    const newResume = { ...resume };
+    newResume.rightContents[experienceIndex].items[itemIndex][property] =
+      newValue;
+    SetResume(newResume);
+    // console.log(newResume.rightContents[0].items[0]);
+  }
+
+  function updateExperienceList(
+    experienceIndex,
+    itemIndex,
+    listIndex,
+    newValue
+  ) {
+    const newResume = { ...resume };
+    newResume.rightContents[experienceIndex].items[itemIndex].jobDetails[
+      listIndex
+    ] = newValue;
+    SetResume(newResume);
+  }
+
+  // console.log(resume.rightContents);
   // useEffect(() => {
-  //   updateListItem(3, 0, "score", "proficiency", "5");
+  //   updateExperienceInfo(0, 0, "name", "Useless Moron");
   // }, []);
-  console.log(resume.leftContent[1].items[0]);
+
   return (
     <>
       <div className="main-container">
@@ -85,6 +109,8 @@ function App() {
           updateTitle={updateTitle}
           updateInfoItem={updateInfoItem}
           updateListItem={updateListItem}
+          updateExperienceInfo={updateExperienceInfo}
+          updateExperienceList={updateExperienceList}
         />
         <Preview resume={resume} />
       </div>

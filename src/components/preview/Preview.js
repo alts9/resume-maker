@@ -4,6 +4,7 @@ import PreviewBio from "./PreviewBio";
 import PreviewContacts from "./PreviewContacts";
 import PreviewProfile from "./PreviewProfile";
 import PreviewLeftContainer from "./PreviewLeftContainer";
+import PreviewRightContainers from "./PreviewRightContainers";
 function Preview({ resume }) {
   return (
     <>
@@ -20,9 +21,11 @@ function Preview({ resume }) {
           </section>
           <div className="container">
             <div className="left-container">
-              <PreviewLeftContainer contents={resume.leftContent} />
+              <PreviewLeftContainer contents={resume.leftContents} />
             </div>
-            <div className="right-container"></div>
+            <div className="right-container">
+              <PreviewRightContainers contents={resume.rightContents} />
+            </div>
           </div>
         </div>
       </div>

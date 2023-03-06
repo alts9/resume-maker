@@ -90,11 +90,42 @@ const softwareList = {
   items: [software1, software2],
 };
 
+const experience1 = {
+  jobTitle: "Junior Programmer",
+  companyName: "ABC Corp",
+  location: "New York",
+  yearStart: "2016",
+  yearEnd: "2018",
+  jobSummary: "Create secure and functional code",
+  jobDetails: [
+    "Formulate program specifications and basic prototypes",
+    "Integrate individual software solutions to higher level systems",
+    "Use web-based tools to create advanced SaaS when applicable",
+  ],
+};
+
+const experience2 = {
+  jobTitle: "Senior Programmer",
+  companyName: "WWW Corp",
+  location: "New York",
+  yearStart: "2016",
+  yearEnd: "2018",
+  jobSummary: "Create secure and functional code",
+  jobDetails: [
+    "Formulate program specifications and basic prototypes",
+    "Integrate individual software solutions to higher level systems",
+    "Use web-based tools to create advanced SaaS when applicable",
+  ],
+};
+
+const experience = { type: "experience", items: [experience1, experience2] };
+
 const userResume = {
   bio: userBio,
   contact: userContact,
   profile: userProfile,
-  leftContent: [educationInfo, languageList, softSkillList, softwareList],
+  leftContents: [educationInfo, languageList, softSkillList, softwareList],
+  rightContents: [experience],
 };
 
 // console.log(userResume);

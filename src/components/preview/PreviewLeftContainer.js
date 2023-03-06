@@ -2,6 +2,7 @@ import React from "react";
 import PreviewInfos from "./PreviewInfos";
 import PreviewLists from "./PreviewLists";
 function PreviewLeftContainer({ contents }) {
+ 
   return (
     <>
       {contents.map((content, index) => {

@@ -71,7 +71,7 @@
 }
 
 .profile {
-  padding-top: 43px;
+  padding-top: 38px;
 }
 
 .title {
@@ -114,10 +114,6 @@ section .spacer {
 
 .info-container {
   padding-top: 30px;
-}
-
-.left-container section:first-child {
-  padding-top: 0px;
 }
 
 .info-container .info-item {
@@ -201,4 +197,45 @@ section .spacer {
 
 .list-item .proficiency-bar-container .width-5 {
   width: 100px;
+}
+
+.experience-container {
+  padding-top: 30px;
+}
+
+.experience-container .experience-item {
+  padding-top: 30px;
+  font-size: 13px;
+}
+
+.experience-container .experience-item .job-title {
+  font-weight: 600;
+}
+
+.experience-container .experience-item .info {
+  padding-top: 2px;
+  /* font-style: italic; */
+}
+
+.experience-container .experience-item .summary {
+  padding-top: 4px;
+  line-height: 20px;
+}
+
+.experience-container .experience-item .details-container {
+  margin: 0px;
+  padding-top: 4px;
+  padding-left: 30px;
+}
+
+.experience-container .experience-item .details-container li {
+  padding-left: 4px;
+}
+
+.right-container section:first-child {
+  padding-top: 0px;
+}
+
+.left-container section:first-child {
+  padding-top: 0px;
 }
