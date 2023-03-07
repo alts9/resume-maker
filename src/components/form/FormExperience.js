@@ -1,6 +1,6 @@
 import React from "react";
 import FormExperienceList from "./FormExperienceList";
-
+import TextInput from "./element/TextInput";
 function FormExperience({
   itemId,
   experience,
@@ -13,71 +13,57 @@ function FormExperience({
   }
   return (
     <>
-      {" "}
-      <label>
-        Job Title:
-        <input
-          type="text"
-          name="jobTitle"
-          onChange={handleChange}
-          defaultValue={experience.jobTitle}
-        />
-      </label>
-      <label>
-        Company Name:
-        <input
-          type="text"
-          name="companyName"
-          onChange={handleChange}
-          defaultValue={experience.companyName}
-        />
-      </label>{" "}
-      <label>
-        Location:
-        <input
-          type="text"
-          name="location"
-          onChange={handleChange}
-          defaultValue={experience.location}
-        />
-      </label>
-      <label>
-        Year Start:
-        <input
-          type="text"
-          name="yearStart"
-          onChange={handleChange}
-          defaultValue={experience.yearStart}
-        />
-      </label>
-      <label>
-        Year End:
-        <input
-          type="text"
-          name="yearEnd"
-          onChange={handleChange}
-          defaultValue={experience.yearEnd}
-        />
-      </label>
-      <label>
-        Summary:
-        <textarea
-          type="text"
-          name="jobSummary"
-          onChange={handleChange}
-          defaultValue={experience.jobSummary}
-        />
-      </label>
+      <TextInput
+        labelText="Job Title:"
+        inputName="jobTitle"
+        inputOnChange={handleChange}
+        inputDefault={experience.jobTitle}
+      />
+      <TextInput
+        labelText="Company:"
+        inputName="companyName"
+        inputOnChange={handleChange}
+        inputDefault={experience.companyName}
+      />
+      <TextInput
+        labelText="Location:"
+        inputName="location"
+        inputOnChange={handleChange}
+        inputDefault={experience.location}
+      />
+      <TextInput
+        labelText="Year Start:"
+        inputName="yearStart"
+        inputOnChange={handleChange}
+        inputDefault={experience.yearStart}
+      />
+      <TextInput
+        labelText="Year End:"
+        inputName="yearEnd"
+        inputOnChange={handleChange}
+        inputDefault={experience.yearEnd}
+      />
+
+      <label htmlFor="jobSummary">Summary:</label>
+      <textarea
+        type="text"
+        name="jobSummary"
+        onChange={handleChange}
+        defaultValue={experience.jobSummary}
+      />
+
       {experience.jobDetails.map((detailsItem, index) => {
         return (
-          <FormExperienceList
-            key={index}
-            experienceId={experienceId}
-            itemId={itemId}
-            listItemId={index}
-            detailsItem={detailsItem}
-            updateExperienceList={updateExperienceList}
-          />
+          <div className="input-subgroup">
+            <FormExperienceList
+              key={index}
+              experienceId={experienceId}
+              itemId={itemId}
+              listItemId={index}
+              detailsItem={detailsItem}
+              updateExperienceList={updateExperienceList}
+            />
+          </div>
         );
       })}
     </>

@@ -10,7 +10,7 @@ function FormLeftContainer({
 }) {
   return (
     <>
-      <div>FormLeftContainer</div>
+      <div className="form-header">Left Column</div>
       {contents.map((content, index) => {
         if (content.type === "info") {
           return (

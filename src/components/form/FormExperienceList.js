@@ -1,5 +1,5 @@
 import React from "react";
-
+import TextInput from "./element/TextInput";
 function FormExperienceList({
   updateExperienceList,
   experienceId,
@@ -13,16 +13,12 @@ function FormExperienceList({
   }
   return (
     <>
-      {" "}
-      <label>
-        List Item:
-        <input
-          type="text"
-          name="listItem"
-          onChange={handleChange}
-          defaultValue={detailsItem}
-        />
-      </label>
+      <TextInput
+        labelText="⌙List Item:"
+        inputName="listItem"
+        inputOnChange={handleChange}
+        inputDefault={detailsItem}
+      />
     </>
   );
 }

@@ -22,13 +22,13 @@ function Form({
   return (
     <>
       <div className="form-container">
-        {/* <div className="form-bio form-group">
+        <div className="form-bio form-group">
           <div className="form-header">Bio</div>
           <FormBio bio={resume.bio} updateBio={updateBio} />
         </div>
         <div className="form-contact form-group">
           {" "}
-          <div className="form-header">Contact</div>
+          <div className="form-header form-group">Contact</div>
           {resume.contact.map((contact) => {
             return (
               <FormContact
@@ -40,18 +40,24 @@ function Form({
             );
           })}
         </div>
-        <div className="form-profile">
-          <FormProfile profile={resume.profile} updateProfile={updateProfile} />
-        </div> */}
-        {/* <div className="form-left-container">
+        <div className="form-profile form-group">
+          <div className="form-header">Profile</div>
+          <div className="profile-item-container">
+            <FormProfile
+              profile={resume.profile}
+              updateProfile={updateProfile}
+            />
+          </div>
+        </div>
+        <div className="form-left-container form-group">
           <FormLeftContainer
             contents={resume.leftContents}
             updateTitle={updateTitle}
             updateInfoItem={updateInfoItem}
             updateListItem={updateListItem}
           />
-        </div> */}
-        <div className="form-right-container">
+        </div>
+        <div className="form-right-container form-group">
           <FormRightContainer
             contents={resume.rightContents}
             updateExperienceInfo={updateExperienceInfo}

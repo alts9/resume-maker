@@ -9,17 +9,18 @@ function FormRightContainer({
 }) {
   return (
     <>
-      <div className="">Form Right Container</div>
+      <div className="form-header">Right Column</div>
       {contents.map((content, index) => {
         if (content.type === "experience") {
-          return "";
-          // <FormExperiences
-          //   key={index}
-          //   id={index}
-          //   experiences={content}
-          //   updateExperienceInfo={updateExperienceInfo}
-          //   updateExperienceList={updateExperienceList}
-          // />
+          return (
+            <FormExperiences
+              key={index}
+              id={index}
+              experiences={content}
+              updateExperienceInfo={updateExperienceInfo}
+              updateExperienceList={updateExperienceList}
+            />
+          );
         } else if (content.type === "reference") {
           return (
             <FormReferences

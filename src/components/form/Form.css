@@ -1,14 +1,118 @@
+.form-container {
+  color: hsl(0, 0%, 10%);
+  height: 297mm;
+  flex-shrink: 0;
+  overflow: scroll;
+  flex-basis: 160mm;
+}
+
+label {
+  font-size: 0.9rem;
+  width: 100px;
+  display: inline-block;
+}
+
+input[type="text"] {
+  border: 1px solid hsl(0, 0%, 75%);
+  color: hsl(0, 0%, 10%);
+  padding: 3px 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  width: 400px;
+}
+
+input[type="number"] {
+  border: 1px solid hsl(0, 0%, 75%);
+  color: hsl(0, 0%, 10%);
+  padding: 3px 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+
+select {
+  color: hsl(0, 0%, 10%);
+  border: none;
+  background-color: white;
+}
+
+textarea {
+  width: 400px;
+  height: 125px;
+  border: 1px solid hsl(0, 0%, 75%);
+  font-family: inherit;
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+
 .form-group {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.form-group div {
+
+.form-group .input-group {
+  padding-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.select-container {
+  border: 1px solid hsl(0, 0%, 75%);
+  display: inline-block;
+  margin-bottom: 5px;
+  height: 19px;
+  border-radius: 3px;
   padding-bottom: 5px;
 }
 
-.form-container {
-  overflow-y: scroll;
-  flex-basis: 200px;
-  flex-shrink: 0;
-  flex-grow: 1;
+.form-header {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-bio label {
+  width: 65px;
+}
+
+.form-contact label {
+  width: 65px;
+}
+
+.profile-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0px;
+}
+
+.form-profile label {
+  width: 65px;
+}
+
+.left-column-title {
+  padding-bottom: 10px;
+}
+
+.input-group .remove {
+  background-color: hsl(0, 50%, 92%);
+  color: white;
+  border: white;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+.input-group .remove:hover {
+  background-color: hsl(0, 50%, 70%);
+}
+
+.input-group .add {
+  background-color: hsl(0, 50%, 92%);
+  color: white;
+  border: white;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+.input-group .add:hover {
+  background-color: hsl(0, 50%, 70%);
 }

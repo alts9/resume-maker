@@ -1,4 +1,5 @@
 import React from "react";
+import TextInput from "./element/TextInput";
 
 function FormList({ item, proficiencyType, itemId, listId, updateListItem }) {
   function handleItemChange(e) {
@@ -13,55 +14,43 @@ function FormList({ item, proficiencyType, itemId, listId, updateListItem }) {
   if (proficiencyType === "none") {
     return (
       <>
-        <label>
-          List Item:
-          <input
-            type="text"
-            name="name"
-            onChange={handleItemChange}
-            defaultValue={item}
-          />
-        </label>
+        <TextInput
+          labelText="List Item:"
+          inputName="name"
+          inputOnChange={handleItemChange}
+          inputDefault={item}
+        />
       </>
     );
   } else if (proficiencyType === "level") {
     return (
       <>
-        <label>
-          List Item:
-          <input
-            type="text"
-            name="name"
-            onChange={handleItemChange}
-            defaultValue={item.name}
-          />
-        </label>
-        <label>
-          Proficiency:
-          <input
-            type="text"
-            name="proficiency"
-            onChange={handleItemChange}
-            defaultValue={item.proficiency}
-          />
-        </label>
+        <TextInput
+          labelText="List Item:"
+          inputName="name"
+          inputOnChange={handleItemChange}
+          inputDefault={item.name}
+        />
+
+        <TextInput
+          labelText="Proficiency:"
+          inputName="proficiency"
+          inputOnChange={handleItemChange}
+          inputDefault={item.proficiency}
+        />
       </>
     );
   } else if (proficiencyType === "score") {
     return (
       <>
-        {" "}
-        <label>
-          List Item:
-          <input
-            type="text"
-            name="name"
-            onChange={handleItemChange}
-            defaultValue={item.name}
-          />
-        </label>
-        <label>
-          Proficiency:
+        <TextInput
+          labelText="List Item:"
+          inputName="name"
+          inputOnChange={handleItemChange}
+          inputDefault={item.name}
+        />
+        <div className="input-item">
+          <label htmlFor="proficiency">Proficiency:</label>
           <input
             type="number"
             min="0"
@@ -70,7 +59,7 @@ function FormList({ item, proficiencyType, itemId, listId, updateListItem }) {
             onChange={handleItemChange}
             value={parseInt(item.proficiency)}
           />
-        </label>
+        </div>
       </>
     );
   }

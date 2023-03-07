@@ -19,7 +19,6 @@
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   text-align: center;
-
   border-bottom: 3px solid black;
 }
 
@@ -110,6 +109,7 @@ section .spacer {
 
 .right-container {
   padding-left: 30px;
+  flex-grow: 2;
 }
 
 .info-container {
@@ -247,7 +247,7 @@ section .spacer {
   /* background-color: hsl(0, 0%, 90%); */
   border: 1px solid hsl(0, 0%, 50%);
   padding: 15px;
-  flex-basis: 160px;
+  flex-basis: 180px;
   margin-bottom: 20px;
 }
 
@@ -264,17 +264,17 @@ section .spacer {
 }
 
 .reference-items-container .reference-item .company-name {
-  font-size: 12px;
+  font-size: 11.5px;
   padding-bottom: 3px;
 }
 
 .reference-items-container .reference-item .phone {
-  font-size: 12px;
+  font-size: 11.5px;
   padding-bottom: 3px;
 }
 
 .reference-items-container .reference-item .email {
-  font-size: 12px;
+  font-size: 11.5px;
 }
 
 /* always put these at the bottom */

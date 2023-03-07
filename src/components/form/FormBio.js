@@ -1,4 +1,5 @@
 import React from "react";
+import TextInput from "./element/TextInput";
 
 function FormBio({ bio, updateBio }) {
   function handleChange(e) {
@@ -6,28 +7,18 @@ function FormBio({ bio, updateBio }) {
   }
   return (
     <>
-      <div className=""> </div>
-      <label>
-        Name:
-        <input
-          type="text"
-          name="name"
-          onChange={handleChange}
-          defaultValue={bio.name}
-        />
-      </label>
-
-      <div className="">
-        <label>
-          Job Title:
-          <input
-            type="text"
-            name="jobTitle"
-            onChange={handleChange}
-            defaultValue={bio.jobTitle}
-          />
-        </label>
-      </div>
+      <TextInput
+        labelText="Name:"
+        inputName="name"
+        inputOnChange={handleChange}
+        inputDefault={bio.name}
+      />
+      <TextInput
+        labelText="Job Title:"
+        inputName="jobTitle"
+        inputOnChange={handleChange}
+        inputDefault={bio.jobTitle}
+      />
     </>
   );
 }
