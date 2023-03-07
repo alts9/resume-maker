@@ -204,7 +204,7 @@ section .spacer {
 }
 
 .experience-container .experience-item {
-  padding-top: 30px;
+  padding-top: 16px;
   font-size: 13px;
 }
 
@@ -231,6 +231,53 @@ section .spacer {
 .experience-container .experience-item .details-container li {
   padding-left: 4px;
 }
+
+.reference-container {
+  padding-top: 33px;
+}
+
+.reference-items-container {
+  padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.reference-items-container .reference-item {
+  /* background-color: hsl(0, 0%, 90%); */
+  border: 1px solid hsl(0, 0%, 50%);
+  padding: 15px;
+  flex-basis: 160px;
+  margin-bottom: 20px;
+}
+
+.reference-items-container .reference-item .name {
+  font-weight: 600;
+  font-size: 13px;
+  padding-bottom: 3px;
+}
+
+.reference-items-container .reference-item .job-title {
+  font-weight: 600;
+  font-size: 13px;
+  padding-bottom: 6px;
+}
+
+.reference-items-container .reference-item .company-name {
+  font-size: 12px;
+  padding-bottom: 3px;
+}
+
+.reference-items-container .reference-item .phone {
+  font-size: 12px;
+  padding-bottom: 3px;
+}
+
+.reference-items-container .reference-item .email {
+  font-size: 12px;
+}
+
+/* always put these at the bottom */
 
 .right-container section:first-child {
   padding-top: 0px;

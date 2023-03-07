@@ -120,12 +120,30 @@ const experience2 = {
 
 const experience = { type: "experience", items: [experience1, experience2] };
 
+const reference1 = {
+  name: "David",
+  jobTitle: "Senior Programmer",
+  companyName: "Company ABC",
+  phone: "0811111111",
+  email: "david@mail.com",
+};
+
+const reference2 = {
+  name: "John",
+  jobTitle: "Junior Programmer",
+  companyName: "Company BCD",
+  phone: "0811111111",
+  email: "john@mail.com",
+};
+
+const references = { type: "reference", items: [reference1, reference2] };
+
 const userResume = {
   bio: userBio,
   contact: userContact,
   profile: userProfile,
   leftContents: [educationInfo, languageList, softSkillList, softwareList],
-  rightContents: [experience],
+  rightContents: [experience, references],
 };
 
 // console.log(userResume);

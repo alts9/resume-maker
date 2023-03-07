@@ -17,6 +17,7 @@ function Form({
   updateListItem,
   updateExperienceInfo,
   updateExperienceList,
+  updateReference,
 }) {
   return (
     <>
@@ -55,6 +56,7 @@ function Form({
             contents={resume.rightContents}
             updateExperienceInfo={updateExperienceInfo}
             updateExperienceList={updateExperienceList}
+            updateReference={updateReference}
           />
         </div>
       </div>{" "}

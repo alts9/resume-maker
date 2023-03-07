@@ -91,9 +91,16 @@ function App() {
     SetResume(newResume);
   }
 
+  function updateReference(referenceIndex, itemIndex, property, newValue) {
+    const newResume = { ...resume };
+    newResume.rightContents[referenceIndex].items[itemIndex][property] =
+      newValue;
+    SetResume(newResume);
+  }
+
   // console.log(resume.rightContents);
   // useEffect(() => {
-  //   updateExperienceInfo(0, 0, "name", "Useless Moron");
+  //   updateReference(1, 1, "jobTitle", "Useless Moron");
   // }, []);
 
   return (
@@ -111,6 +118,7 @@ function App() {
           updateListItem={updateListItem}
           updateExperienceInfo={updateExperienceInfo}
           updateExperienceList={updateExperienceList}
+          updateReference={updateReference}
         />
         <Preview resume={resume} />
       </div>
