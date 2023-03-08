@@ -1,12 +1,7 @@
 import React from "react";
 import FormExperience from "./FormExperience";
 
-function FormExperiences({
-  experiences,
-  id,
-  updateExperienceInfo,
-  updateExperienceList,
-}) {
+function FormExperiences({ experiences, id, updateData }) {
   return (
     <>
       <div className="form-header">Experience</div>
@@ -17,8 +12,7 @@ function FormExperiences({
             itemId={index}
             experience={experience}
             experienceId={id}
-            updateExperienceInfo={updateExperienceInfo}
-            updateExperienceList={updateExperienceList}
+            updateData={updateData}
           />
         );
       })}

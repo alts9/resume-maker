@@ -9,24 +9,53 @@ function App() {
   const [resume, SetResume] = useState(userResume);
 
   //data category
-  function updateData(category, property, newValue) {
+  function updateData({
+    category,
+    subCategory,
+    mainId,
+    subId,
+    subSubId,
+    property,
+    newValue,
+  } = {}) {
+    const newResume = { ...resume };
     switch (category) {
       case "bio":
-        updateBio(property, newValue);
+        newResume.bio[property] = newValue;
+        break;
+      case "contact":
+        newResume.contact[mainId][property] = newValue;
+        break;
+      case "profile":
+        newResume.profile.profileSummary = newValue;
+        break;
+      case "leftColumnTitle":
+        newResume.leftContents[mainId].name = newValue;
+        break;
+      case "info":
+        newResume.leftContents[mainId].items[subId][property] = newValue;
+        break;
+      case "list":
+        if (subCategory === "none") {
+          newResume.leftContents[mainId].items[subId] = newValue;
+        } else if (subCategory === "level") {
+          newResume.leftContents[mainId].items[subId][property] = newValue;
+        } else if (subCategory === "score") {
+          newResume.leftContents[mainId].items[subId][property] = newValue;
+        }
+        break;
+      case "experienceInfo":
+        newResume.rightContents[mainId].items[subId][property] = newValue;
+        break;
+      case "experienceList":
+        newResume.rightContents[mainId].items[subId].jobDetails[subSubId] =
+          newValue;
+        break;
+      case "reference":
+        newResume.rightContents[mainId].items[subId][property] = newValue;
         break;
       default:
     }
-  }
-
-  function updateBio(property, newValue) {
-    const newResume = { ...resume };
-    newResume.bio[property] = newValue;
-    SetResume(newResume);
-  }
-
-  function updateContact(id, property, newValue) {
-    const newResume = { ...resume };
-    newResume.contact[id][property] = newValue;
     SetResume(newResume);
   }
 
@@ -38,33 +67,14 @@ function App() {
     console.log(resume.contact);
   }
 
-  function updateProfile(newValue) {
-    const newResume = { ...resume };
-    newResume.profile.profileSummary = newValue;
-    SetResume(newResume);
-  }
-
-  //for info & list component
-  function updateTitle(index, newValue) {
-    const newResume = { ...resume };
-    newResume.leftContents[index].name = newValue;
-    SetResume(newResume);
-  }
-
-  function updateInfoItem(infoIndex, itemIndex, property, newValue) {
-    const newResume = { ...resume };
-    newResume.leftContents[infoIndex].items[itemIndex][property] = newValue;
-    SetResume(newResume);
-  }
-
   function updateListItem(
     listIndex,
     itemIndex,
     proficiencyType,
     property,
-    newValue
+    newValue,
+    newResume
   ) {
-    const newResume = { ...resume };
     if (proficiencyType === "none") {
       newResume.leftContents[listIndex].items[itemIndex] = newValue;
     } else if (proficiencyType === "level") {
@@ -72,40 +82,37 @@ function App() {
     } else if (proficiencyType === "score") {
       newResume.leftContents[listIndex].items[itemIndex][property] = newValue;
     }
-    SetResume(newResume);
   }
 
   function updateExperienceInfo(
     experienceIndex,
     itemIndex,
     property,
-    newValue
-  ) {
-    const newResume = { ...resume };
-    newResume.rightContents[experienceIndex].items[itemIndex][property] =
-      newValue;
-    SetResume(newResume);
-    // console.log(newResume.rightContents[0].items[0]);
-  }
+    newValue,
+    newResume
+  ) {}
 
   function updateExperienceList(
     experienceIndex,
     itemIndex,
     listIndex,
-    newValue
+    newValue,
+    newResume
   ) {
-    const newResume = { ...resume };
     newResume.rightContents[experienceIndex].items[itemIndex].jobDetails[
       listIndex
     ] = newValue;
-    SetResume(newResume);
   }
 
-  function updateReference(referenceIndex, itemIndex, property, newValue) {
-    const newResume = { ...resume };
+  function updateReference(
+    referenceIndex,
+    itemIndex,
+    property,
+    newValue,
+    newResume
+  ) {
     newResume.rightContents[referenceIndex].items[itemIndex][property] =
       newValue;
-    SetResume(newResume);
   }
 
   function addItem() {
@@ -116,9 +123,9 @@ function App() {
   }
   //leftContentIndex, type
   // console.log(resume.rightContents);
-  useEffect(() => {
-    addItem();
-  }, []);
+  // useEffect(() => {
+  //   addItem();
+  // }, []);
 
   return (
     <>
@@ -126,16 +133,8 @@ function App() {
         {" "}
         <Form
           resume={resume}
-          updateBio={updateBio}
-          updateContact={updateContact}
+          updateData={updateData}
           updateContactIcon={updateContactIcon}
-          updateProfile={updateProfile}
-          updateTitle={updateTitle}
-          updateInfoItem={updateInfoItem}
-          updateListItem={updateListItem}
-          updateExperienceInfo={updateExperienceInfo}
-          updateExperienceList={updateExperienceList}
-          updateReference={updateReference}
         />
         <Preview resume={resume} />
       </div>

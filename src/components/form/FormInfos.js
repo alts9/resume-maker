@@ -2,9 +2,13 @@ import React from "react";
 import FormInfo from "./FormInfo";
 import TextInput from "./element/TextInput";
 
-function FormInfos({ id, info, updateTitle, updateInfoItem }) {
+function FormInfos({ id, info, updateData }) {
   function handleTitleChange(e) {
-    updateTitle(id, e.target.value);
+    updateData({
+      mainId: id,
+      newValue: e.target.value,
+      category: "leftColumnTitle",
+    });
   }
   function handleAdd() {
     console.log(info);
@@ -26,7 +30,7 @@ function FormInfos({ id, info, updateTitle, updateInfoItem }) {
             key={index}
             itemId={index}
             item={item}
-            updateInfoItem={updateInfoItem}
+            updateData={updateData}
             infoId={id}
           />
         );

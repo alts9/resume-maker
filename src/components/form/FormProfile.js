@@ -1,8 +1,8 @@
 import React from "react";
 
-function FormProfile({ profile, updateProfile }) {
+function FormProfile({ profile, updateData }) {
   function handleChange(e) {
-    updateProfile(e.target.value);
+    updateData({ category: "profile", newValue: e.target.value });
   }
   return (
     <>

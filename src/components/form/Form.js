@@ -6,25 +6,13 @@ import FormProfile from "./FormProfile";
 import FormLeftContainer from "./FormLeftContainer";
 import FormRightContainer from "./FormRightContainer";
 
-function Form({
-  resume,
-  updateBio,
-  updateContact,
-  updateContactIcon,
-  updateProfile,
-  updateTitle,
-  updateInfoItem,
-  updateListItem,
-  updateExperienceInfo,
-  updateExperienceList,
-  updateReference,
-}) {
+function Form({ resume, updateData, updateContactIcon}) {
   return (
     <>
       <div className="form-container">
         <div className="form-bio form-group">
           <div className="form-header">Bio</div>
-          <FormBio bio={resume.bio} updateBio={updateBio} />
+          <FormBio bio={resume.bio} updateData={updateData} />
         </div>
         <div className="form-contact form-group">
           <div className="form-header form-group">Contact</div>
@@ -35,7 +23,7 @@ function Form({
                 <FormContact
                   key={contact.id}
                   contact={contact}
-                  updateContact={updateContact}
+                  updateData={updateData}
                   updateContactIcon={updateContactIcon}
                 />
               );
@@ -45,26 +33,19 @@ function Form({
         <div className="form-profile form-group">
           <div className="form-header">Profile</div>
           <div className="profile-item-container">
-            <FormProfile
-              profile={resume.profile}
-              updateProfile={updateProfile}
-            />
+            <FormProfile profile={resume.profile} updateData={updateData} />
           </div>
         </div>
         <div className="form-left-container form-group">
           <FormLeftContainer
             contents={resume.leftContents}
-            updateTitle={updateTitle}
-            updateInfoItem={updateInfoItem}
-            updateListItem={updateListItem}
+            updateData={updateData}
           />
         </div>
         <div className="form-right-container form-group">
           <FormRightContainer
             contents={resume.rightContents}
-            updateExperienceInfo={updateExperienceInfo}
-            updateExperienceList={updateExperienceList}
-            updateReference={updateReference}
+            updateData={updateData}
           />
         </div>
       </div>{" "}

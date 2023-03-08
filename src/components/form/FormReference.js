@@ -1,8 +1,15 @@
 import React from "react";
 import TextInput from "./element/TextInput";
-function FormReference({ itemId, reference, referenceId, updateReference }) {
+function FormReference({ itemId, reference, referenceId, updateData }) {
   function handleChange(e) {
-    updateReference(referenceId, itemId, e.target.name, e.target.value);
+    updateData({
+      category: "reference",
+      mainId: referenceId,
+      subId: itemId,
+      property: e.target.name,
+      newValue: e.target.value,
+    });
+
   }
   return (
     <>

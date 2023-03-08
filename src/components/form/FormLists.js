@@ -2,9 +2,13 @@ import React from "react";
 import FormList from "./FormList";
 import TextInput from "./element/TextInput";
 
-function FormLists({ id, list, updateTitle, updateListItem }) {
+function FormLists({ id, list, updateData }) {
   function handleTitleChange(e) {
-    updateTitle(id, e.target.value);
+    updateData({
+      mainId: id,
+      newValue: e.target.value,
+      category: "leftColumnTitle",
+    });
   }
   return (
     <>
@@ -30,7 +34,7 @@ function FormLists({ id, list, updateTitle, updateListItem }) {
                 proficiencyType={list.proficiencyType}
                 item={item}
                 listId={id}
-                updateListItem={updateListItem}
+                updateData={updateData}
               />
             );
           })}

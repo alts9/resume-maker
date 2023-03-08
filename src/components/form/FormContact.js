@@ -1,9 +1,15 @@
 import React from "react";
 import TextInput from "./element/TextInput";
 
-function FormContact({ contact, updateContact, updateContactIcon }) {
+function FormContact({ contact, updateData, updateContactIcon }) {
   function handleChange(e) {
-    updateContact(contact.id, e.target.name, e.target.value);
+    // updateData(contact.id, e.target.name, e.target.value);
+    updateData({
+      mainId: contact.id,
+      property: e.target.name,
+      newValue: e.target.value,
+      category: "contact",
+    });
   }
 
   function handleIconChange(e) {

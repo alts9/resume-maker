@@ -1,15 +1,16 @@
 import React from "react";
 import TextInput from "./element/TextInput";
 
-function FormList({ item, proficiencyType, itemId, listId, updateListItem }) {
+function FormList({ item, proficiencyType, itemId, listId, updateData }) {
   function handleItemChange(e) {
-    updateListItem(
-      listId,
-      itemId,
-      proficiencyType,
-      e.target.name,
-      e.target.value
-    );
+    updateData({
+      category: "list",
+      mainId: listId,
+      subId: itemId,
+      subCategory: proficiencyType,
+      property: e.target.name,
+      newValue: e.target.value,
+    });
   }
   if (proficiencyType === "none") {
     return (

@@ -5,11 +5,16 @@ function FormExperience({
   itemId,
   experience,
   experienceId,
-  updateExperienceInfo,
-  updateExperienceList,
+  updateData,
 }) {
   function handleChange(e) {
-    updateExperienceInfo(experienceId, itemId, e.target.name, e.target.value);
+    updateData({
+      category: "experienceInfo",
+      mainId: experienceId,
+      subId: itemId,
+      property: e.target.name,
+      newValue: e.target.value,
+    });
   }
   return (
     <>
@@ -54,16 +59,14 @@ function FormExperience({
 
       {experience.jobDetails.map((detailsItem, index) => {
         return (
-          
-            <FormExperienceList
-              key={index}
-              experienceId={experienceId}
-              itemId={itemId}
-              listItemId={index}
-              detailsItem={detailsItem}
-              updateExperienceList={updateExperienceList}
-            />
-        
+          <FormExperienceList
+            key={index}
+            experienceId={experienceId}
+            itemId={itemId}
+            listItemId={index}
+            detailsItem={detailsItem}
+            updateData={updateData}
+          />
         );
       })}
     </>

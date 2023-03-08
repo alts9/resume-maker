@@ -1,9 +1,13 @@
 import React from "react";
 import TextInput from "./element/TextInput";
 
-function FormBio({ bio, updateBio }) {
+function FormBio({ bio, updateData }) {
   function handleChange(e) {
-    updateBio(e.target.name, e.target.value);
+    updateData({
+      property: e.target.name,
+      newValue: e.target.value,
+      category: "bio",
+    });
   }
   return (
     <>

@@ -1,9 +1,15 @@
 import React from "react";
 import TextInput from "./element/TextInput";
 
-function FormInfo({ item, updateInfoItem, itemId, infoId }) {
+function FormInfo({ item, updateData, itemId, infoId }) {
   function handleItemChange(e) {
-    updateInfoItem(infoId, itemId, e.target.name, e.target.value);
+    updateData({
+      category: "info",
+      mainId: infoId,
+      subId: itemId,
+      property: e.target.name,
+      newValue: e.target.value,
+    });
   }
   return (
     <>
