@@ -7,16 +7,15 @@ function FormReferences({ id, references, updateReference }) {
       <div className="form-header">Reference</div>
       {references.items.map((reference, index) => {
         return (
-          <div className="input-group">
-            {" "}
-            <FormReference
-              key={index}
-              itemId={index}
-              reference={reference}
-              referenceId={id}
-              updateReference={updateReference}
-            />
-          </div>
+
+              <FormReference
+                key={index}
+                itemId={index}
+                reference={reference}
+                referenceId={id}
+                updateReference={updateReference}
+              />
+
         );
       })}
     </>

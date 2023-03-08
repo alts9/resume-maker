@@ -13,12 +13,14 @@ function FormExperienceList({
   }
   return (
     <>
-      <TextInput
-        labelText="⌙List Item:"
-        inputName="listItem"
-        inputOnChange={handleChange}
-        inputDefault={detailsItem}
-      />
+      <div className="input-subgroup">
+        <TextInput
+          labelText="⌙List Item:"
+          inputName="listItem"
+          inputOnChange={handleChange}
+          inputDefault={detailsItem}
+        />{" "}
+      </div>
     </>
   );
 }

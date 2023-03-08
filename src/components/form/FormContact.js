@@ -14,32 +14,29 @@ function FormContact({ contact, updateContact, updateContactIcon }) {
   }
   return (
     <>
-      <div className="input-group">
-        {" "}
-        <div className="input-item">
-          <label htmlFor="icon">Icon</label>
-          <div className="select-container">
-            <select id="icon" name="icon" onChange={handleIconChange}>
-              <option value="0 phone-icon">Phone</option>
-              <option value="1 envelope-icon" data-class="envelope-icon">
-                Email
-              </option>
-              <option value="2 house-icon" data-class="house-icon">
-                Home
-              </option>
-              <option value="3 linkedIn-icon" data-class="linkedIn-icon">
-                LinkedIn
-              </option>
-            </select>
-          </div>
+      <div className="input-item">
+        <label htmlFor="icon">Icon</label>
+        <div className="select-container">
+          <select id="icon" name="icon" onChange={handleIconChange}>
+            <option value="0 phone-icon">Phone</option>
+            <option value="1 envelope-icon" data-class="envelope-icon">
+              Email
+            </option>
+            <option value="2 house-icon" data-class="house-icon">
+              Home
+            </option>
+            <option value="3 linkedIn-icon" data-class="linkedIn-icon">
+              LinkedIn
+            </option>
+          </select>
         </div>
-        <TextInput
-          labelText="Item:"
-          inputName="data"
-          inputOnChange={handleChange}
-          inputDefault={contact.data}
-        />
       </div>
+      <TextInput
+        labelText="Item:"
+        inputName="data"
+        inputOnChange={handleChange}
+        inputDefault={contact.data}
+      />
     </>
   );
 }

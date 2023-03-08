@@ -20,18 +20,21 @@ function FormLists({ id, list, updateTitle, updateListItem }) {
       </div>
       <div className="input-group">
         {" "}
-        {list.items.map((item, index) => {
-          return (
-            <FormList
-              key={index}
-              itemId={index}
-              proficiencyType={list.proficiencyType}
-              item={item}
-              listId={id}
-              updateListItem={updateListItem}
-            />
-          );
-        })}
+        <div className="">
+          {" "}
+          {list.items.map((item, index) => {
+            return (
+              <FormList
+                key={index}
+                itemId={index}
+                proficiencyType={list.proficiencyType}
+                item={item}
+                listId={id}
+                updateListItem={updateListItem}
+              />
+            );
+          })}
+        </div>
       </div>
     </>
   );

@@ -6,11 +6,13 @@ function FormInfos({ id, info, updateTitle, updateInfoItem }) {
   function handleTitleChange(e) {
     updateTitle(id, e.target.value);
   }
+  function handleAdd() {
+    console.log(info);
+  }
   return (
     <>
       <div className="form-header">Form Info</div>
       <div className="left-column-title">
-        {" "}
         <TextInput
           labelText="Title:"
           inputName="name"
@@ -20,25 +22,20 @@ function FormInfos({ id, info, updateTitle, updateInfoItem }) {
       </div>
       {info.items.map((item, index) => {
         return (
-          <>
-            {" "}
-            <div className="input-group">
-              <div className="">
-                {" "}
-                <FormInfo
-                  key={index}
-                  itemId={index}
-                  item={item}
-                  updateInfoItem={updateInfoItem}
-                  infoId={id}
-                />
-              </div>
-              {/* <button className="remove">X</button> */}
-            </div>
-            {/* <button className="add">Add</button> */}
-          </>
+          <FormInfo
+            key={index}
+            itemId={index}
+            item={item}
+            updateInfoItem={updateInfoItem}
+            infoId={id}
+          />
         );
       })}
+      <div className="add-button-container">
+        <button className="add" onClick={handleAdd}>
+          Add
+        </button>
+      </div>
     </>
   );
 }

@@ -27,18 +27,20 @@ function Form({
           <FormBio bio={resume.bio} updateBio={updateBio} />
         </div>
         <div className="form-contact form-group">
-          {" "}
           <div className="form-header form-group">Contact</div>
-          {resume.contact.map((contact) => {
-            return (
-              <FormContact
-                key={contact.id}
-                contact={contact}
-                updateContact={updateContact}
-                updateContactIcon={updateContactIcon}
-              />
-            );
-          })}
+          <div className="input-group">
+            {" "}
+            {resume.contact.map((contact) => {
+              return (
+                <FormContact
+                  key={contact.id}
+                  contact={contact}
+                  updateContact={updateContact}
+                  updateContactIcon={updateContactIcon}
+                />
+              );
+            })}
+          </div>
         </div>
         <div className="form-profile form-group">
           <div className="form-header">Profile</div>

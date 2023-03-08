@@ -89,6 +89,10 @@ textarea {
   width: 65px;
 }
 
+.form-contact .input-group {
+  display: block;
+}
+
 .left-column-title {
   padding-bottom: 10px;
 }
@@ -99,20 +103,33 @@ textarea {
   border: white;
   margin-top: 3px;
   font-weight: 600;
+  cursor: grab;
 }
 
 .input-group .remove:hover {
   background-color: hsl(0, 50%, 70%);
 }
 
-.input-group .add {
-  background-color: hsl(0, 50%, 92%);
+.form-group .add {
+  background-color: hsl(110, 50%, 88%);
   color: white;
   border: white;
   margin-top: 3px;
   font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: grab;
 }
 
-.input-group .add:hover {
-  background-color: hsl(0, 50%, 70%);
+.add-button-container {
+  width: 135mm;
+  display: flex;
+  justify-content: end;
+  position: relative;
+
+  top: -10px;
+}
+
+.form-group .add:hover {
+  background-color: hsl(110, 50%, 70%);
 }

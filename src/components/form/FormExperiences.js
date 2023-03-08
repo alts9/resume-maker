@@ -12,17 +12,14 @@ function FormExperiences({
       <div className="form-header">Experience</div>
       {experiences.items.map((experience, index) => {
         return (
-          <div className="input-group">
-            {" "}
-            <FormExperience
-              key={index}
-              itemId={index}
-              experience={experience}
-              experienceId={id}
-              updateExperienceInfo={updateExperienceInfo}
-              updateExperienceList={updateExperienceList}
-            />
-          </div>
+          <FormExperience
+            key={index}
+            itemId={index}
+            experience={experience}
+            experienceId={id}
+            updateExperienceInfo={updateExperienceInfo}
+            updateExperienceList={updateExperienceList}
+          />
         );
       })}
     </>

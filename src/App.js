@@ -1,4 +1,4 @@
-import { userResume } from "./modules/SampleObject";
+import { userResume, infoTemplate } from "./modules/SampleObject";
 import logo from "./logo.svg";
 import "./App.css";
 import Form from "./components/form/Form";
@@ -8,9 +8,19 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [resume, SetResume] = useState(userResume);
 
-  function updateBio(variable, newValue) {
+  //data category
+  function updateData(category, property, newValue) {
+    switch (category) {
+      case "bio":
+        updateBio(property, newValue);
+        break;
+      default:
+    }
+  }
+
+  function updateBio(property, newValue) {
     const newResume = { ...resume };
-    newResume.bio[variable] = newValue;
+    newResume.bio[property] = newValue;
     SetResume(newResume);
   }
 
@@ -98,10 +108,17 @@ function App() {
     SetResume(newResume);
   }
 
+  function addItem() {
+    const newResume = { ...resume };
+    newResume.leftContents[0].items.push(infoTemplate);
+    console.log(newResume.leftContents[0]);
+    SetResume(newResume);
+  }
+  //leftContentIndex, type
   // console.log(resume.rightContents);
-  // useEffect(() => {
-  //   updateReference(1, 1, "jobTitle", "Useless Moron");
-  // }, []);
+  useEffect(() => {
+    addItem();
+  }, []);
 
   return (
     <>

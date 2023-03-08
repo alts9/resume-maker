@@ -147,5 +147,10 @@ const userResume = {
 };
 
 // console.log(userResume);
-
-export { userResume };
+const infoTemplate = {
+  name: "Put Degree/ Achievement/ Certification Here",
+  institution: "Stanford University",
+  yearStart: 20,
+  yearEnd: 20,
+};
+export { userResume, infoTemplate };

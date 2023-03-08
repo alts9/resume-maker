@@ -54,7 +54,7 @@ function FormExperience({
 
       {experience.jobDetails.map((detailsItem, index) => {
         return (
-          <div className="input-subgroup">
+          
             <FormExperienceList
               key={index}
               experienceId={experienceId}
@@ -63,7 +63,7 @@ function FormExperience({
               detailsItem={detailsItem}
               updateExperienceList={updateExperienceList}
             />
-          </div>
+        
         );
       })}
     </>

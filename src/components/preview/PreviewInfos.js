@@ -5,7 +5,6 @@ function PreviewInfos({ info }) {
   return (
     <>
       <section className="info-container">
-        {" "}
         <div className="title">{info.name}</div>
         <div className="spacer"></div>
         {info.items.map((item, id) => {
