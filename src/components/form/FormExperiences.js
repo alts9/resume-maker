@@ -1,15 +1,23 @@
 import React from "react";
 import FormExperience from "./FormExperience";
 import AddButton from "./element/AddButton";
-function FormExperiences({ experiences, id, updateData, addData }) {
+function FormExperiences({ experiences, id, updateData, addData, removeData }) {
   function handleAdd() {
     addData({ category: "experience", mainId: id });
+  }
+  function handleRemove() {
+    removeData({ category: "formExperience", mainId: id });
   }
   return (
     <>
       <div className="form-experience ">
         {" "}
-        <div className="form-header">Experience</div>
+        <div className="form-header">
+          Experience{" "}
+          <button onClick={handleRemove} className="remove">
+            X
+          </button>
+        </div>
         <div className="input-container">
           {experiences.items.map((experience, index) => {
             return (
@@ -20,6 +28,7 @@ function FormExperiences({ experiences, id, updateData, addData }) {
                 experienceId={id}
                 updateData={updateData}
                 addData={addData}
+                removeData={removeData}
               />
             );
           })}

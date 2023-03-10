@@ -1,7 +1,14 @@
 import React from "react";
 import TextInput from "./element/TextInput";
 
-function FormList({ item, proficiencyType, itemId, listId, updateData }) {
+function FormList({
+  item,
+  proficiencyType,
+  itemId,
+  listId,
+  updateData,
+  removeData,
+}) {
   function handleItemChange(e) {
     updateData({
       category: "list",
@@ -12,6 +19,9 @@ function FormList({ item, proficiencyType, itemId, listId, updateData }) {
       newValue: e.target.value,
     });
   }
+  function handleRemove() {
+    removeData({ category: "itemList", mainId: listId, subId: itemId });
+  }
   if (proficiencyType === "none") {
     return (
       <>
@@ -21,10 +31,12 @@ function FormList({ item, proficiencyType, itemId, listId, updateData }) {
               labelText="List Item:"
               inputName="name"
               inputOnChange={handleItemChange}
-              inputDefault={item}
+              inputValue={item}
             />
           </div>
-          <button className="remove">X</button>
+          <button onClick={handleRemove} className="remove">
+            X
+          </button>
         </div>
       </>
     );
@@ -37,16 +49,18 @@ function FormList({ item, proficiencyType, itemId, listId, updateData }) {
               labelText="List Item:"
               inputName="name"
               inputOnChange={handleItemChange}
-              inputDefault={item.name}
+              inputValue={item.name}
             />
             <TextInput
               labelText="Proficiency:"
               inputName="proficiency"
               inputOnChange={handleItemChange}
-              inputDefault={item.proficiency}
+              inputValue={item.proficiency}
             />
           </div>{" "}
-          <button className="remove">X</button>
+          <button onClick={handleRemove} className="remove">
+            X
+          </button>
         </div>
       </>
     );
@@ -59,7 +73,7 @@ function FormList({ item, proficiencyType, itemId, listId, updateData }) {
               labelText="List Item:"
               inputName="name"
               inputOnChange={handleItemChange}
-              inputDefault={item.name}
+              inputValue={item.name}
             />
             <div>
               <label htmlFor="proficiency">Proficiency:</label>
@@ -73,7 +87,9 @@ function FormList({ item, proficiencyType, itemId, listId, updateData }) {
               />
             </div>
           </div>
-          <button className="remove">X</button>
+          <button onClick={handleRemove} className="remove">
+            X
+          </button>
         </div>
       </>
     );

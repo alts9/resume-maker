@@ -2,7 +2,7 @@ import React from "react";
 import FormInfo from "./FormInfo";
 import TextInput from "./element/TextInput";
 import AddButton from "./element/AddButton";
-function FormInfos({ id, info, updateData, addData }) {
+function FormInfos({ id, info, updateData, addData, removeData }) {
   function handleTitleChange(e) {
     updateData({
       mainId: id,
@@ -13,10 +13,20 @@ function FormInfos({ id, info, updateData, addData }) {
   function handleAdd() {
     addData({ category: "info", mainId: id });
   }
+
+  function handleRemove() {
+    removeData({ category: "formInfo", mainId: id });
+  }
+
   return (
     <>
       <div className="form-info ">
-        <div className="form-header">Form Info</div>
+        <div className="form-header">
+          Form Info{" "}
+          <button onClick={handleRemove} className="remove">
+            X
+          </button>
+        </div>
         <div className="input-container">
           <div className="input-title-container">
             <div className="input-title">
@@ -24,10 +34,9 @@ function FormInfos({ id, info, updateData, addData }) {
                 labelText="Title:"
                 inputName="name"
                 inputOnChange={handleTitleChange}
-                inputDefault={info.name}
+                inputValue={info.name}
               />
             </div>
-            <button className="remove">X</button>
           </div>
           {info.items.map((item, index) => {
             return (
@@ -37,6 +46,7 @@ function FormInfos({ id, info, updateData, addData }) {
                 item={item}
                 updateData={updateData}
                 infoId={id}
+                removeData={removeData}
               />
             );
           })}

@@ -8,6 +8,7 @@ function FormExperience({
   experienceId,
   updateData,
   addData,
+  removeData,
 }) {
   function handleChange(e) {
     updateData({
@@ -25,6 +26,14 @@ function FormExperience({
       subId: itemId,
     });
   }
+  function handleRemove() {
+    removeData({
+      category: "itemExperience",
+      mainId: experienceId,
+      subId: itemId,
+    });
+  }
+
   return (
     <>
       <div className="input-item">
@@ -34,31 +43,31 @@ function FormExperience({
             labelText="Job Title:"
             inputName="jobTitle"
             inputOnChange={handleChange}
-            inputDefault={experience.jobTitle}
+            inputValue={experience.jobTitle}
           />
           <TextInput
             labelText="Company:"
             inputName="companyName"
             inputOnChange={handleChange}
-            inputDefault={experience.companyName}
+            inputValue={experience.companyName}
           />
           <TextInput
             labelText="Location:"
             inputName="location"
             inputOnChange={handleChange}
-            inputDefault={experience.location}
+            inputValue={experience.location}
           />
           <TextInput
             labelText="Year Start:"
             inputName="yearStart"
             inputOnChange={handleChange}
-            inputDefault={experience.yearStart}
+            inputValue={experience.yearStart}
           />
           <TextInput
             labelText="Year End:"
             inputName="yearEnd"
             inputOnChange={handleChange}
-            inputDefault={experience.yearEnd}
+            inputValue={experience.yearEnd}
           />
           <label htmlFor="jobSummary">Summary:</label>
           <textarea
@@ -76,11 +85,14 @@ function FormExperience({
                 listItemId={index}
                 detailsItem={detailsItem}
                 updateData={updateData}
+                removeData={removeData}
               />
             );
           })}
         </div>
-        <button className="remove">X</button>
+        <button onClick={handleRemove} className="remove">
+          X
+        </button>
       </div>
 
       <AddButton handleAdd={handleAdd} text={"Add list item"} />

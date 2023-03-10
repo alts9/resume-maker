@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import TextInput from "./element/TextInput";
 function FormContact({
   contact,
@@ -50,7 +50,7 @@ function FormContact({
           labelText="Item:"
           inputName="data"
           inputOnChange={handleChange}
-          inputDefault={contact.data}
+          inputValue={contact.data}
         />
       </div>
       <button onClick={handleRemove} className="remove">

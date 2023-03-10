@@ -49,6 +49,7 @@ function Form({ resume, updateData, updateContactIcon, addData, removeData }) {
             contents={resume.leftContents}
             updateData={updateData}
             addData={addData}
+            removeData={removeData}
           />
         </div>
         <div className="form-right-container ">
@@ -56,6 +57,7 @@ function Form({ resume, updateData, updateContactIcon, addData, removeData }) {
             contents={resume.rightContents}
             updateData={updateData}
             addData={addData}
+            removeData={removeData}
           />
         </div>
       </div>

@@ -6,6 +6,7 @@ function FormExperienceList({
   itemId,
   listItemId,
   detailsItem,
+  removeData,
 }) {
   function handleChange(e) {
     updateData({
@@ -16,6 +17,14 @@ function FormExperienceList({
       newValue: e.target.value,
     });
   }
+  function handleRemove() {
+    removeData({
+      category: "itemListExperience",
+      mainId: experienceId,
+      subId: itemId,
+      subSubId: listItemId,
+    });
+  }
   return (
     <>
       <div className="input-subgroup">
@@ -23,9 +32,11 @@ function FormExperienceList({
           labelText="⌙List Item:"
           inputName="listItem"
           inputOnChange={handleChange}
-          inputDefault={detailsItem}
+          inputValue={detailsItem}
         />
-        <button className="remove">X</button>
+        <button onClick={handleRemove} className="remove">
+          X
+        </button>
       </div>
     </>
   );

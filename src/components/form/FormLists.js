@@ -1,7 +1,7 @@
 import React from "react";
 import FormList from "./FormList";
 import TextInput from "./element/TextInput";
-function FormLists({ id, list, updateData, addData }) {
+function FormLists({ id, list, updateData, addData, removeData }) {
   function handleTitleChange(e) {
     updateData({
       mainId: id,
@@ -12,6 +12,9 @@ function FormLists({ id, list, updateData, addData }) {
   function handleAdd(e) {
     addData({ category: "list" + e.target.name, mainId: id });
   }
+  function handleRemove() {
+    removeData({ category: "formList", mainId: id });
+  }
 
   function pickHeader(proficiency) {
     switch (proficiency) {
@@ -20,7 +23,7 @@ function FormLists({ id, list, updateData, addData }) {
       case "level":
         return "List-proficiency";
       case "score":
-        return "Lis-score";
+        return "List-score";
       default:
         break;
     }
@@ -30,7 +33,12 @@ function FormLists({ id, list, updateData, addData }) {
     <>
       <div className="form-list ">
         {" "}
-        <div className="form-header ">{pickHeader(list.proficiencyType)}</div>
+        <div className="form-header ">
+          {pickHeader(list.proficiencyType)}{" "}
+          <button onClick={handleRemove} className="remove">
+            X
+          </button>
+        </div>
         <div className="input-container">
           <div className="input-title-container">
             <div className="input-title">
@@ -38,10 +46,9 @@ function FormLists({ id, list, updateData, addData }) {
                 labelText="Title:"
                 inputName="name"
                 inputOnChange={handleTitleChange}
-                inputDefault={list.name}
-              />
+                inputValue={list.name}
+              />{" "}
             </div>
-            <button className="remove">X</button>
           </div>
 
           {list.items.map((item, index) => {
@@ -53,6 +60,7 @@ function FormLists({ id, list, updateData, addData }) {
                 item={item}
                 listId={id}
                 updateData={updateData}
+                removeData={removeData}
               />
             );
           })}

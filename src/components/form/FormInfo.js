@@ -1,7 +1,7 @@
 import React from "react";
 import TextInput from "./element/TextInput";
 
-function FormInfo({ item, updateData, itemId, infoId }) {
+function FormInfo({ item, updateData, itemId, infoId, removeData }) {
   function handleItemChange(e) {
     updateData({
       category: "info",
@@ -11,6 +11,9 @@ function FormInfo({ item, updateData, itemId, infoId }) {
       newValue: e.target.value,
     });
   }
+  function handleRemove() {
+    removeData({ category: "itemInfo", mainId: infoId, subId: itemId });
+  }
   return (
     <>
       <div className="input-item">
@@ -19,28 +22,30 @@ function FormInfo({ item, updateData, itemId, infoId }) {
             labelText="Name:"
             inputName="name"
             inputOnChange={handleItemChange}
-            inputDefault={item.name}
+            inputValue={item.name}
           />
           <TextInput
             labelText="Institution:"
             inputName="institution"
             inputOnChange={handleItemChange}
-            inputDefault={item.institution}
+            inputValue={item.institution}
           />
           <TextInput
             labelText="Year Start:"
             inputName="yearStart"
             inputOnChange={handleItemChange}
-            inputDefault={item.yearStart}
+            inputValue={item.yearStart}
           />
           <TextInput
             labelText="Year Finished:"
             inputName="yearEnd"
             inputOnChange={handleItemChange}
-            inputDefault={item.yearEnd}
+            inputValue={item.yearEnd}
           />
         </div>
-        <button className="remove">X</button>
+        <button onClick={handleRemove} className="remove">
+          X
+        </button>
       </div>
     </>
   );

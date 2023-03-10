@@ -15,13 +15,13 @@ function FormBio({ bio, updateData }) {
         labelText="Name:"
         inputName="name"
         inputOnChange={handleChange}
-        inputDefault={bio.name}
+        inputValue={bio.name}
       />
       <TextInput
         labelText="Job Title:"
         inputName="jobTitle"
         inputOnChange={handleChange}
-        inputDefault={bio.jobTitle}
+        inputValue={bio.jobTitle}
       />
     </>
   );

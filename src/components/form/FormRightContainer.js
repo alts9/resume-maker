@@ -1,7 +1,7 @@
 import React from "react";
 import FormExperiences from "./FormExperiences";
 import FormReferences from "./FormReferences";
-function FormRightContainer({ contents, updateData, addData }) {
+function FormRightContainer({ contents, updateData, addData, removeData }) {
   return (
     <>
       <div className="form-header">Right Column</div>
@@ -14,6 +14,7 @@ function FormRightContainer({ contents, updateData, addData }) {
               experiences={content}
               updateData={updateData}
               addData={addData}
+              removeData={removeData}
             />
           );
         } else if (content.type === "reference") {
@@ -24,6 +25,7 @@ function FormRightContainer({ contents, updateData, addData }) {
               references={content}
               updateData={updateData}
               addData={addData}
+              removeData={removeData}
             />
           );
         }

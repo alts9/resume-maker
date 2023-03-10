@@ -13,11 +13,14 @@ function App() {
     switch (category) {
       case "contact":
         newResume.contact.splice(mainId, 1);
-        newResume.contact = [];
         break;
       case "formInfo":
       case "formList":
         newResume.leftContents.splice(mainId, 1);
+        break;
+      case "formExperience":
+      case "formReference":
+        newResume.rightContents.splice(mainId, 1);
         break;
       case "itemInfo":
       case "itemList":

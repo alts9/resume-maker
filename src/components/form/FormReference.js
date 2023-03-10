@@ -1,6 +1,12 @@
 import React from "react";
 import TextInput from "./element/TextInput";
-function FormReference({ itemId, reference, referenceId, updateData }) {
+function FormReference({
+  itemId,
+  reference,
+  referenceId,
+  updateData,
+  removeData,
+}) {
   function handleChange(e) {
     updateData({
       category: "reference",
@@ -8,6 +14,13 @@ function FormReference({ itemId, reference, referenceId, updateData }) {
       subId: itemId,
       property: e.target.name,
       newValue: e.target.value,
+    });
+  }
+  function handleRemove() {
+    removeData({
+      category: "itemReference",
+      mainId: referenceId,
+      subId: itemId,
     });
   }
   return (
@@ -18,35 +31,37 @@ function FormReference({ itemId, reference, referenceId, updateData }) {
             labelText="Name:"
             inputName="name"
             inputOnChange={handleChange}
-            inputDefault={reference.name}
+            inputValue={reference.name}
           />
           <TextInput
             labelText="Job Title:"
             inputName="jobTitle"
             inputOnChange={handleChange}
-            inputDefault={reference.jobTitle}
+            inputValue={reference.jobTitle}
           />
           <TextInput
             labelText="Company:"
             inputName="companyName"
             inputOnChange={handleChange}
-            inputDefault={reference.companyName}
+            inputValue={reference.companyName}
           />
           <TextInput
             labelText="Phone:"
             inputName="phone"
             inputOnChange={handleChange}
-            inputDefault={reference.phone}
+            inputValue={reference.phone}
           />
           <TextInput
             labelText="Email:"
             inputName="email"
             inputOnChange={handleChange}
-            inputDefault={reference.email}
+            inputValue={reference.email}
           />
         </div>
       </div>
-      <button className="remove">X</button>
+      <button onClick={handleRemove} className="remove">
+        X
+      </button>
     </>
   );
 }
