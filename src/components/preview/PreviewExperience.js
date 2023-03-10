@@ -10,7 +10,7 @@ function PreviewExperience({ experience }) {
           <span className="company-name">{experience.companyName} / </span>
           <span className="location">{experience.location} / </span>
           <span className="year">
-            {experience.yearStart}{" "}
+            {experience.yearStart}
             {experience.yearEnd !== "" ? "- " + experience.yearEnd : ""}
           </span>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import FormInfos from "./FormInfos";
 import FormLists from "./FormLists";
 
-function FormLeftContainer({ contents, updateData }) {
+function FormLeftContainer({ contents, updateData, addData }) {
   return (
     <>
       <div className="form-header">Left Column</div>
@@ -14,6 +14,7 @@ function FormLeftContainer({ contents, updateData }) {
               id={index}
               info={content}
               updateData={updateData}
+              addData={addData}
             />
           );
         } else if (content.type === "list") {
@@ -23,6 +24,7 @@ function FormLeftContainer({ contents, updateData }) {
               id={index}
               list={content}
               updateData={updateData}
+              addData={addData}
             />
           );
         }

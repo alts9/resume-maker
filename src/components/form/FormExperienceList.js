@@ -24,7 +24,8 @@ function FormExperienceList({
           inputName="listItem"
           inputOnChange={handleChange}
           inputDefault={detailsItem}
-        />{" "}
+        />
+        <button className="remove">X</button>
       </div>
     </>
   );

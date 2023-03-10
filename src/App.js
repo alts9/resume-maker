@@ -1,4 +1,4 @@
-import { userResume, infoTemplate } from "./modules/SampleObject";
+import { userResume, objectTemplate } from "./modules/SampleObject";
 import logo from "./logo.svg";
 import "./App.css";
 import Form from "./components/form/Form";
@@ -8,7 +8,44 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [resume, SetResume] = useState(userResume);
 
-  //data category
+  function removeData({ category, mainId, subId, subSubId } = {}) {
+    const newResume = { ...resume };
+    switch (category) {
+      case "contact":
+        newResume.contact.splice(mainId, 1);
+        newResume.contact = [];
+        break;
+      case "formInfo":
+      case "formList":
+        newResume.leftContents.splice(mainId, 1);
+        break;
+      case "itemInfo":
+      case "itemList":
+        newResume.leftContents[mainId].items.splice(subId, 1);
+        break;
+      case "itemListExperience":
+        newResume.rightContents[mainId].items[subId].jobDetails.splice(
+          subSubId,
+          1
+        );
+        break;
+      case "itemExperience":
+      case "itemReference":
+        newResume.rightContents[mainId].items.splice(subId, 1);
+        break;
+      default:
+        break;
+    }
+    SetResume(newResume);
+  }
+
+  //leftContentIndex, type
+  // console.log(resume.rightContents);
+  // useEffect(() => {
+  //   removeData({ category: "contact", mainId: 0 });
+  //   // console.log(resume);
+  // }, []);
+
   function updateData({
     category,
     subCategory,
@@ -61,80 +98,65 @@ function App() {
 
   function updateContactIcon(contactId, newIconId, newIconClass) {
     const newResume = { ...resume };
-    newResume.contact[contactId].iconid = newIconId;
+    newResume.contact[contactId].iconId = newIconId;
     newResume.contact[contactId].iconName = newIconClass;
     SetResume(newResume);
-    console.log(resume.contact);
   }
 
-  function updateListItem(
-    listIndex,
-    itemIndex,
-    proficiencyType,
-    property,
-    newValue,
-    newResume
-  ) {
-    if (proficiencyType === "none") {
-      newResume.leftContents[listIndex].items[itemIndex] = newValue;
-    } else if (proficiencyType === "level") {
-      newResume.leftContents[listIndex].items[itemIndex][property] = newValue;
-    } else if (proficiencyType === "score") {
-      newResume.leftContents[listIndex].items[itemIndex][property] = newValue;
-    }
-  }
-
-  function updateExperienceInfo(
-    experienceIndex,
-    itemIndex,
-    property,
-    newValue,
-    newResume
-  ) {}
-
-  function updateExperienceList(
-    experienceIndex,
-    itemIndex,
-    listIndex,
-    newValue,
-    newResume
-  ) {
-    newResume.rightContents[experienceIndex].items[itemIndex].jobDetails[
-      listIndex
-    ] = newValue;
-  }
-
-  function updateReference(
-    referenceIndex,
-    itemIndex,
-    property,
-    newValue,
-    newResume
-  ) {
-    newResume.rightContents[referenceIndex].items[itemIndex][property] =
-      newValue;
-  }
-
-  function addItem() {
+  function addData({ category, mainId, subId } = {}) {
     const newResume = { ...resume };
-    newResume.leftContents[0].items.push(infoTemplate);
-    console.log(newResume.leftContents[0]);
+    switch (category) {
+      case "contact":
+        newResume.contact.push(objectTemplate.contactTemplate);
+        break;
+      case "info":
+        newResume.leftContents[mainId].items.push(objectTemplate.infoTemplate);
+        break;
+      case "listlevel":
+        newResume.leftContents[mainId].items.push(
+          objectTemplate.listProficiencyTemplate
+        );
+        break;
+      case "listnone":
+        newResume.leftContents[mainId].items.push(
+          objectTemplate.listBasicTemplate
+        );
+        break;
+      case "listscore":
+        newResume.leftContents[mainId].items.push(
+          objectTemplate.listScoreTemplate
+        );
+        break;
+      case "experience":
+        newResume.rightContents[mainId].items.push(
+          objectTemplate.experienceTemplate
+        );
+        break;
+      case "experienceList":
+        newResume.rightContents[mainId].items[subId].jobDetails.push(
+          objectTemplate.experienceListTemplate
+        );
+        break;
+      case "reference":
+        newResume.rightContents[mainId].items.push(
+          objectTemplate.referenceTemplate
+        );
+        break;
+      default:
+        break;
+    }
     SetResume(newResume);
   }
-  //leftContentIndex, type
-  // console.log(resume.rightContents);
-  // useEffect(() => {
-  //   addItem();
-  // }, []);
 
   return (
     <>
       <div className="main-container">
-        {" "}
         <Form
           resume={resume}
           updateData={updateData}
           updateContactIcon={updateContactIcon}
+          addData={addData}
+          removeData={removeData}
         />
         <Preview resume={resume} />
       </div>

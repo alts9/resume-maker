@@ -8,7 +8,6 @@ function FormProfile({ profile, updateData }) {
     <>
       <label htmlFor="name">Profile:</label>
 
-      <div className="input-group">
         <textarea
           className="profileInput"
           type="text"
@@ -16,7 +15,7 @@ function FormProfile({ profile, updateData }) {
           onChange={handleChange}
           defaultValue={profile.profileSummary}
         />
-      </div>
+
     </>
   );
 }

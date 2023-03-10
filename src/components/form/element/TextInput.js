@@ -3,8 +3,7 @@ import React from "react";
 function TextInput({ labelText, inputName, inputOnChange, inputDefault }) {
   return (
     <>
-      {" "}
-      <div className={"input-item input-text"}>
+      <div className={"input-text"}>
         <label htmlFor={inputName}>{labelText} </label>
         <input
           type="text"

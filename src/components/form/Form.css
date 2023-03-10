@@ -44,18 +44,6 @@ textarea {
   padding: 3px 5px;
 }
 
-.form-group {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.form-group .input-group {
-  padding-bottom: 10px;
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-
 .select-container {
   border: 1px solid hsl(0, 0%, 75%);
   display: inline-block;
@@ -68,53 +56,40 @@ textarea {
 .form-header {
   font-weight: 600;
   margin-bottom: 5px;
+  margin-top: 8px;
 }
 
-.form-bio label {
-  width: 65px;
-}
-
-.form-contact label {
-  width: 65px;
-}
-
-.profile-item-container {
+.text-area-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin: 0px;
 }
 
-.form-profile label {
-  width: 65px;
-}
-
-.form-contact .input-group {
-  display: block;
-}
-
 .left-column-title {
   padding-bottom: 10px;
 }
 
-.input-group .remove {
+.remove {
   background-color: hsl(0, 50%, 92%);
   color: white;
   border: white;
-  margin-top: 3px;
   font-weight: 600;
   cursor: grab;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  top: 2px;
 }
 
-.input-group .remove:hover {
+.remove:hover {
   background-color: hsl(0, 50%, 70%);
 }
 
-.form-group .add {
+.add {
   background-color: hsl(110, 50%, 88%);
   color: white;
   border: white;
-  margin-top: 3px;
   font-weight: 600;
   padding: 5px 10px;
   border-radius: 3px;
@@ -122,14 +97,61 @@ textarea {
 }
 
 .add-button-container {
-  width: 135mm;
+  width: 512px;
   display: flex;
   justify-content: end;
-  position: relative;
-
-  top: -10px;
+  margin-bottom: 6px;
 }
 
-.form-group .add:hover {
+.add:hover {
   background-color: hsl(110, 50%, 70%);
+}
+
+.form-contact .input-container,
+.form-reference .input-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 10px;
+}
+
+.form-info .input-container > div,
+.form-list .input-container > div {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-bottom: 10px;
+}
+
+.form-info .input-container > div:last-child,
+.form-list .input-container > div:last-child {
+  padding-bottom: 0px;
+}
+
+.form-list .add-button-container {
+  margin-top: 8px;
+}
+
+.form-experience .input-container button {
+  margin-bottom: 10px;
+}
+
+.form-experience .input-item {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-bottom: 10px;
+}
+
+.form-experience .input-item > .remove {
+  position: relative;
+  right: 10px;
+  align-self: start;
+}
+
+.form-experience .input-subgroup > .remove {
+  position: relative;
+  left: 20px;
+}
+
+.form-experience .input-subgroup {
+  display: grid;
+  grid-template-columns: auto auto;
 }

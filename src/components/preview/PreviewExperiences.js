@@ -5,7 +5,6 @@ function PreviewExperiences({ experiences }) {
   return (
     <>
       <section className="experience-container">
-        {" "}
         <div className="title">Experience</div>
         <div className="spacer"></div>
         {experiences.items.map((experience, id) => {

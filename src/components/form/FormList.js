@@ -15,51 +15,65 @@ function FormList({ item, proficiencyType, itemId, listId, updateData }) {
   if (proficiencyType === "none") {
     return (
       <>
-        <TextInput
-          labelText="List Item:"
-          inputName="name"
-          inputOnChange={handleItemChange}
-          inputDefault={item}
-        />
+        <div className="input-item">
+          <div>
+            <TextInput
+              labelText="List Item:"
+              inputName="name"
+              inputOnChange={handleItemChange}
+              inputDefault={item}
+            />
+          </div>
+          <button className="remove">X</button>
+        </div>
       </>
     );
   } else if (proficiencyType === "level") {
     return (
       <>
-        <TextInput
-          labelText="List Item:"
-          inputName="name"
-          inputOnChange={handleItemChange}
-          inputDefault={item.name}
-        />
-
-        <TextInput
-          labelText="Proficiency:"
-          inputName="proficiency"
-          inputOnChange={handleItemChange}
-          inputDefault={item.proficiency}
-        />
+        <div className="input-item">
+          <div>
+            <TextInput
+              labelText="List Item:"
+              inputName="name"
+              inputOnChange={handleItemChange}
+              inputDefault={item.name}
+            />
+            <TextInput
+              labelText="Proficiency:"
+              inputName="proficiency"
+              inputOnChange={handleItemChange}
+              inputDefault={item.proficiency}
+            />
+          </div>{" "}
+          <button className="remove">X</button>
+        </div>
       </>
     );
   } else if (proficiencyType === "score") {
     return (
       <>
-        <TextInput
-          labelText="List Item:"
-          inputName="name"
-          inputOnChange={handleItemChange}
-          inputDefault={item.name}
-        />
         <div className="input-item">
-          <label htmlFor="proficiency">Proficiency:</label>
-          <input
-            type="number"
-            min="0"
-            max="5"
-            name="proficiency"
-            onChange={handleItemChange}
-            value={parseInt(item.proficiency)}
-          />
+          <div>
+            <TextInput
+              labelText="List Item:"
+              inputName="name"
+              inputOnChange={handleItemChange}
+              inputDefault={item.name}
+            />
+            <div>
+              <label htmlFor="proficiency">Proficiency:</label>
+              <input
+                type="number"
+                min="0"
+                max="5"
+                name="proficiency"
+                onChange={handleItemChange}
+                value={parseInt(item.proficiency)}
+              />
+            </div>
+          </div>
+          <button className="remove">X</button>
         </div>
       </>
     );

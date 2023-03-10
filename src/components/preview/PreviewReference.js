@@ -3,7 +3,6 @@ import React from "react";
 function PreviewReference({ reference }) {
   return (
     <>
-      {" "}
       <div className="reference-item">
         <div className="name">{reference.name}</div>
         <div className="job-title">{reference.jobTitle}</div>

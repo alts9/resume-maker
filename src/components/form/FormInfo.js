@@ -13,8 +13,8 @@ function FormInfo({ item, updateData, itemId, infoId }) {
   }
   return (
     <>
-      <div className="input-group">
-        <div className="">
+      <div className="input-item">
+        <div>
           <TextInput
             labelText="Name:"
             inputName="name"

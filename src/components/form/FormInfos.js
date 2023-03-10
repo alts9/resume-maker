@@ -1,8 +1,8 @@
 import React from "react";
 import FormInfo from "./FormInfo";
 import TextInput from "./element/TextInput";
-
-function FormInfos({ id, info, updateData }) {
+import AddButton from "./element/AddButton";
+function FormInfos({ id, info, updateData, addData }) {
   function handleTitleChange(e) {
     updateData({
       mainId: id,
@@ -11,34 +11,37 @@ function FormInfos({ id, info, updateData }) {
     });
   }
   function handleAdd() {
-    console.log(info);
+    addData({ category: "info", mainId: id });
   }
   return (
     <>
-      <div className="form-header">Form Info</div>
-      <div className="left-column-title">
-        <TextInput
-          labelText="Title:"
-          inputName="name"
-          inputOnChange={handleTitleChange}
-          inputDefault={info.name}
-        />
-      </div>
-      {info.items.map((item, index) => {
-        return (
-          <FormInfo
-            key={index}
-            itemId={index}
-            item={item}
-            updateData={updateData}
-            infoId={id}
-          />
-        );
-      })}
-      <div className="add-button-container">
-        <button className="add" onClick={handleAdd}>
-          Add
-        </button>
+      <div className="form-info ">
+        <div className="form-header">Form Info</div>
+        <div className="input-container">
+          <div className="input-title-container">
+            <div className="input-title">
+              <TextInput
+                labelText="Title:"
+                inputName="name"
+                inputOnChange={handleTitleChange}
+                inputDefault={info.name}
+              />
+            </div>
+            <button className="remove">X</button>
+          </div>
+          {info.items.map((item, index) => {
+            return (
+              <FormInfo
+                key={index}
+                itemId={index}
+                item={item}
+                updateData={updateData}
+                infoId={id}
+              />
+            );
+          })}
+          <AddButton handleAdd={handleAdd} text={"Add info"} />
+        </div>
       </div>
     </>
   );

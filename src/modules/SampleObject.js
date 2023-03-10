@@ -1,32 +1,28 @@
 const userBio = { name: "Ellie Carter", jobTitle: "Production Manager" };
 
 const phoneContact = {
-  id: 0,
-  iconid: 0,
+  iconId: 0,
   iconName: "phone-icon",
   data: "+081 234 5678",
   link: "",
 };
 
 const emailContact = {
-  id: 1,
-  iconid: 1,
+  iconId: 1,
   iconName: "envelope-icon",
   data: "elliecarter@mail.com",
   link: "",
 };
 
 const houseContact = {
-  id: 2,
-  iconid: 2,
+  iconId: 2,
   iconName: "house-icon",
   data: "Austin, TX",
   link: "",
 };
 
 const linkedInContact = {
-  id: 3,
-  iconid: 3,
+  iconId: 3,
   iconName: "linkedIn-icon",
   data: "/in/ellie_carter",
   link: "https://www.linkedin.com/in/John_john123",
@@ -146,11 +142,58 @@ const userResume = {
   rightContents: [experience, references],
 };
 
-// console.log(userResume);
+const contactTemplate = {
+  iconId: 2,
+  iconName: "house-icon",
+  data: "Contact data",
+  link: "",
+};
+
 const infoTemplate = {
   name: "Put Degree/ Achievement/ Certification Here",
   institution: "Stanford University",
   yearStart: 20,
   yearEnd: 20,
 };
-export { userResume, infoTemplate };
+
+const listProficiencyTemplate = { name: "Item Name", proficiency: "Beginner" };
+
+const listBasicTemplate = "Item Name";
+
+const listScoreTemplate = { name: "Item Name", proficiency: "4" };
+
+const experienceTemplate = {
+  jobTitle: "Senior Programmer",
+  companyName: "WWW Corp",
+  location: "New York",
+  yearStart: "2016",
+  yearEnd: "2018",
+  jobSummary: "Create secure and functional code",
+  jobDetails: [
+    "Formulate program specifications and basic prototypes",
+    "Integrate individual software solutions to higher level systems",
+  ],
+};
+
+const experienceListTemplate =
+  "Formulate program specifications and basic prototypes";
+
+const referenceTemplate = {
+  name: "John",
+  jobTitle: "Junior Programmer",
+  companyName: "Company BCD",
+  phone: "0811111111",
+  email: "john@mail.com",
+};
+
+const objectTemplate = {
+  contactTemplate,
+  infoTemplate,
+  listProficiencyTemplate,
+  listBasicTemplate,
+  listScoreTemplate,
+  experienceTemplate,
+  experienceListTemplate,
+  referenceTemplate,
+};
+export { userResume, objectTemplate };

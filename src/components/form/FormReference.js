@@ -9,13 +9,11 @@ function FormReference({ itemId, reference, referenceId, updateData }) {
       property: e.target.name,
       newValue: e.target.value,
     });
-
   }
   return (
     <>
-      {" "}
-      <div className="input-group">
-        <div className="">
+      <div className="input-item">
+        <div>
           <TextInput
             labelText="Name:"
             inputName="name"
@@ -45,9 +43,10 @@ function FormReference({ itemId, reference, referenceId, updateData }) {
             inputName="email"
             inputOnChange={handleChange}
             inputDefault={reference.email}
-          />{" "}
+          />
         </div>
       </div>
+      <button className="remove">X</button>
     </>
   );
 }

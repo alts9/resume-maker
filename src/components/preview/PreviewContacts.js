@@ -13,12 +13,11 @@ function PreviewContacts({ contact }) {
   ];
   return (
     <>
-      {" "}
-      {contact.map((contact) => {
+      {contact.map((contact, index) => {
         return (
           <PreviewContact
-            key={contact.id}
-            icon={icons[contact.iconid].icon}
+            key={index}
+            icon={icons[contact.iconId].icon}
             contact={contact}
           />
         );
