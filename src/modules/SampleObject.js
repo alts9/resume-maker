@@ -1,28 +1,28 @@
 const userBio = { name: "Ellie Carter", jobTitle: "Production Manager" };
 
 const phoneContact = {
-  iconId: 0,
+  iconId: 8,
   iconName: "phone-icon",
   data: "+081 234 5678",
   link: "",
 };
 
 const emailContact = {
-  iconId: 1,
+  iconId: 2,
   iconName: "envelope-icon",
   data: "elliecarter@mail.com",
   link: "",
 };
 
 const houseContact = {
-  iconId: 2,
+  iconId: 5,
   iconName: "house-icon",
   data: "Austin, TX",
   link: "",
 };
 
 const linkedInContact = {
-  iconId: 3,
+  iconId: 7,
   iconName: "linkedIn-icon",
   data: "/in/ellie_carter",
   link: "https://www.linkedin.com/in/John_john123",
@@ -143,8 +143,8 @@ const userResume = {
 };
 
 const contactTemplate = {
-  iconId: 2,
-  iconName: "house-icon",
+  iconId: 8,
+  iconName: "phone-icon",
   data: "Contact data",
   link: "",
 };

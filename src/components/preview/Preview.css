@@ -45,28 +45,14 @@
   border-bottom: 3px solid black;
 }
 
-.phone-icon {
-  height: 11px;
-  position: relative;
-  top: 1px;
+.contact > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.envelope-icon {
-  height: 12px;
-  position: relative;
-  top: 2px;
-}
-
-.house-icon {
-  height: 12px;
-  position: relative;
-  top: 1px;
-}
-
-.linkedIn-icon {
-  height: 14px;
-  position: relative;
-  top: 2px;
+.contact > div > svg {
+  width: 20px;
 }
 
 .profile {

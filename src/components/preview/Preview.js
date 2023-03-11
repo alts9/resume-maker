@@ -1,5 +1,6 @@
 import React from "react";
 import "./Preview.css";
+import "./IconAlignment.css";
 import PreviewBio from "./PreviewBio";
 import PreviewContacts from "./PreviewContacts";
 import PreviewProfile from "./PreviewProfile";
