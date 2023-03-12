@@ -4,7 +4,7 @@ import FormReferences from "./FormReferences";
 function FormRightContainer({ contents, updateData, addData, removeData }) {
   return (
     <>
-      <div className="form-header">Right Column</div>
+      <div className="form-large-header">Right Column</div>
       {contents.map((content, index) => {
         if (content.type === "experience") {
           return (
@@ -29,7 +29,11 @@ function FormRightContainer({ contents, updateData, addData, removeData }) {
             />
           );
         }
-      })}
+      })}{" "}
+      <div className="column-add-container ">
+        <button className="add">Add Experience</button>
+        <button className="add">Add Reference</button>
+      </div>
     </>
   );
 }

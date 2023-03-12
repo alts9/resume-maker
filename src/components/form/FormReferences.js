@@ -32,7 +32,7 @@ function FormReferences({ id, references, updateData, addData, removeData }) {
               />
             );
           })}
-          <AddButton handleAdd={handleAdd} text={"Add reference"} />
+          <AddButton handleAdd={handleAdd} text={"Add reference item"} />
         </div>
       </div>
     </>

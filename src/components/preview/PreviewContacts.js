@@ -4,11 +4,7 @@ function PreviewContacts({ contact }) {
   return (
     <>
       {contact.map((contact, index) => {
-        return (
-          <>
-            <PreviewContact key={index} contact={contact} />
-          </>
-        );
+        return <PreviewContact key={index} contact={contact} />;
       })}
     </>
   );

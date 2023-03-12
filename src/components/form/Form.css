@@ -5,6 +5,8 @@
   flex-shrink: 0;
   overflow: scroll;
   flex-basis: 160mm;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 label {
@@ -57,7 +59,7 @@ textarea {
 .form-header {
   font-weight: 600;
   margin-bottom: 5px;
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
 .text-area-container {
@@ -68,7 +70,7 @@ textarea {
 }
 
 .remove {
-  background-color: hsl(0, 50%, 92%);
+  background-color: hsl(0, 50%, 90%);
   color: white;
   border: white;
   font-weight: 600;
@@ -82,11 +84,11 @@ textarea {
 }
 
 .remove:hover {
-  background-color: hsl(0, 50%, 70%);
+  background-color: hsl(0, 50%, 65%);
 }
 
 .add {
-  background-color: hsl(110, 50%, 88%);
+  background-color: hsl(110, 50%, 80%);
   color: white;
   border: white;
   font-weight: 600;
@@ -103,9 +105,20 @@ textarea {
 }
 
 .add:hover {
-  background-color: hsl(110, 50%, 70%);
+  background-color: hsl(110, 50%, 60%);
 }
 /* Css for column element  */
+
+.form-large-header {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.form-bio .form-large-header {
+  margin-top: 10px;
+}
+
 .left-column-title {
   padding-bottom: 10px;
 }
@@ -167,4 +180,14 @@ textarea {
 .form-experience .input-subgroup {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+.column-add-container {
+  padding: 15px 0px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: 1px solid hsl(0, 0%, 80%);
+  border-bottom: 1px solid hsl(0, 0%, 40%);
 }

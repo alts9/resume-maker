@@ -33,8 +33,13 @@ function FormContact({
         <div>
           <label htmlFor="icon">Icon</label>
           <div className="select-container">
-            <select id="icon" name="icon" onChange={handleIconChange}>
-              <option value="" disabled selected>
+            <select
+              id="icon"
+              name="icon"
+              onChange={handleIconChange}
+              defaultValue={"DEFAULT"}
+            >
+              <option value="DEFAULT" disabled>
                 Pick icon
               </option>
               <option value="0 behance-icon">Behance</option>

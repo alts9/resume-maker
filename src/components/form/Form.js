@@ -15,6 +15,7 @@ function Form({ resume, updateData, updateContactIcon, addData, removeData }) {
     <>
       <div className="form-container">
         <div className="form-bio">
+          <div className="form-large-header">General Info</div>
           <div className="form-header">Bio</div>
 
           <FormBio bio={resume.bio} updateData={updateData} />
@@ -39,7 +40,7 @@ function Form({ resume, updateData, updateContactIcon, addData, removeData }) {
           </div>
         </div>
         <div className="form-profile ">
-          <div className="form-header">Profile</div>
+          <div className="form-large-header">Profile</div>
           <div className="input-container text-area-container">
             <FormProfile profile={resume.profile} updateData={updateData} />
           </div>

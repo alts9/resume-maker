@@ -5,7 +5,7 @@ import FormLists from "./FormLists";
 function FormLeftContainer({ contents, updateData, addData, removeData }) {
   return (
     <>
-      <div className="form-header">Left Column</div>
+      <div className="form-large-header">Left Column</div>
       {contents.map((content, index) => {
         if (content.type === "info") {
           return (
@@ -31,6 +31,12 @@ function FormLeftContainer({ contents, updateData, addData, removeData }) {
           );
         }
       })}
+      <div className="column-add-container ">
+        <button className="add">Add Info</button>
+        <button className="add">Add Proficiency List</button>
+        <button className="add">Add Basic List</button>
+        <button className="add">Add Skillbar List</button>
+      </div>
     </>
   );
 }

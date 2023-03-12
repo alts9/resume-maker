@@ -71,7 +71,7 @@ function FormLists({ id, list, updateData, addData, removeData }) {
             name={list.proficiencyType}
             onClick={handleAdd}
           >
-            Add List
+            Add Item
           </button>
         </div>
       </div>

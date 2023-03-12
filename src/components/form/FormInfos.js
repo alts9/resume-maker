@@ -50,7 +50,7 @@ function FormInfos({ id, info, updateData, addData, removeData }) {
               />
             );
           })}
-          <AddButton handleAdd={handleAdd} text={"Add info"} />
+          <AddButton handleAdd={handleAdd} text={"Add item"} />
         </div>
       </div>
     </>

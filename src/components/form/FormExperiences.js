@@ -33,7 +33,7 @@ function FormExperiences({ experiences, id, updateData, addData, removeData }) {
             );
           })}
         </div>
-        <AddButton handleAdd={handleAdd} text={"Add experience"} />
+        <AddButton handleAdd={handleAdd} text={"Add experience Item"} />
       </div>
     </>
   );

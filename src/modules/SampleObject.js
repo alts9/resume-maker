@@ -149,20 +149,48 @@ const contactTemplate = {
   link: "",
 };
 
-const infoTemplate = {
+const infoItemTemplate = {
   name: "Put Degree/ Achievement/ Certification Here",
   institution: "Stanford University",
   yearStart: 20,
   yearEnd: 20,
 };
 
-const listProficiencyTemplate = { name: "Item Name", proficiency: "Beginner" };
+const infoTemplate = {
+  type: "info",
+  name: "Info Name Here",
+  items: [infoItemTemplate],
+};
 
-const listBasicTemplate = "Item Name";
+const listProficiencyItemTemplate = {
+  name: "Item Name",
+  proficiency: "Beginner",
+};
 
-const listScoreTemplate = { name: "Item Name", proficiency: "4" };
+const listProficiencyTemplate = {
+  type: "list",
+  name: "List Name Here",
+  proficiencyType: "level", //none/score/level
+  items: [listProficiencyItemTemplate],
+};
 
-const experienceTemplate = {
+const listBasicTemplate = {
+  type: "list",
+  name: "softSkill",
+  proficiencyType: "none", //none/score/level
+  items: ["List item name"],
+};
+
+const listScoreItemTemplate = { name: "Item Name", proficiency: "4" };
+
+const listScoreTemplate = {
+  type: "list",
+  name: "List name here",
+  proficiencyType: "score", //none/score/level
+  items: [listScoreItemTemplate],
+};
+
+const experienceItemTemplate = {
   jobTitle: "Senior Programmer",
   companyName: "WWW Corp",
   location: "New York",
@@ -175,15 +203,25 @@ const experienceTemplate = {
   ],
 };
 
+const experienceTemplate = {
+  type: "experience",
+  items: [experienceItemTemplate],
+};
+
 const experienceListTemplate =
   "Formulate program specifications and basic prototypes";
 
-const referenceTemplate = {
+const referenceItemTemplate = {
   name: "John",
   jobTitle: "Junior Programmer",
   companyName: "Company BCD",
   phone: "0811111111",
   email: "john@mail.com",
+};
+
+const referenceTemplate = {
+  type: "reference",
+  items: [referenceItemTemplate],
 };
 
 const objectTemplate = {

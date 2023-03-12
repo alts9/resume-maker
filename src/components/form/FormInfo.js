@@ -43,9 +43,13 @@ function FormInfo({ item, updateData, itemId, infoId, removeData }) {
             inputValue={item.yearEnd}
           />
         </div>
-        <button onClick={handleRemove} className="remove">
-          X
-        </button>
+        <div className="button-container">
+          {" "}
+          <button onClick={handleRemove} className="remove">
+            X
+          </button>
+          <button className="reorderBtn">⬆</button>
+        </div>
       </div>
     </>
   );

@@ -42,13 +42,6 @@ function App() {
     SetResume(newResume);
   }
 
-  //leftContentIndex, type
-  // console.log(resume.rightContents);
-  // useEffect(() => {
-  //   removeData({ category: "contact", mainId: 0 });
-  //   // console.log(resume);
-  // }, []);
-
   function updateData({
     category,
     subCategory,
@@ -113,26 +106,28 @@ function App() {
         newResume.contact.push(objectTemplate.contactTemplate);
         break;
       case "info":
-        newResume.leftContents[mainId].items.push(objectTemplate.infoTemplate);
+        newResume.leftContents[mainId].items.push(
+          objectTemplate.infoTemplate.items[0]
+        );
         break;
       case "listlevel":
         newResume.leftContents[mainId].items.push(
-          objectTemplate.listProficiencyTemplate
+          objectTemplate.listProficiencyTemplate.items[0]
         );
         break;
       case "listnone":
         newResume.leftContents[mainId].items.push(
-          objectTemplate.listBasicTemplate
+          objectTemplate.listBasicTemplate.items[0]
         );
         break;
       case "listscore":
         newResume.leftContents[mainId].items.push(
-          objectTemplate.listScoreTemplate
+          objectTemplate.listScoreTemplate.items[0]
         );
         break;
       case "experience":
         newResume.rightContents[mainId].items.push(
-          objectTemplate.experienceTemplate
+          objectTemplate.experienceTemplate.items[0]
         );
         break;
       case "experienceList":
@@ -142,14 +137,39 @@ function App() {
         break;
       case "reference":
         newResume.rightContents[mainId].items.push(
-          objectTemplate.referenceTemplate
+          objectTemplate.referenceTemplate.items[0]
         );
+        break;
+      case "infoSection":
+        newResume.leftContents.push(objectTemplate.infoTemplate);
+        break;
+      case "listBasicSection":
+        newResume.leftContents.push(objectTemplate.listBasicTemplate);
+        break;
+      case "listProficiencySection":
+        newResume.leftContents.push(objectTemplate.listProficiencyTemplate);
+        break;
+      case "listScoreSection":
+        newResume.leftContents.push(objectTemplate.listScoreTemplate);
+        break;
+      case "experienceSection":
+        newResume.rightContents.push(objectTemplate.experienceTemplate);
+        break;
+      case "referenceSection":
+        newResume.rightContents.push(objectTemplate.referenceTemplate);
         break;
       default:
         break;
     }
     SetResume(newResume);
   }
+
+  //leftContentIndex, type
+  // console.log(resume.rightContents);
+  // useEffect(() => {
+  //   addData({ category: "referenceSection" });
+  //   console.log(resume);
+  // }, []);
 
   return (
     <>
