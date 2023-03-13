@@ -1,4 +1,4 @@
-const userBio = { name: "Ellie Carter", jobTitle: "Production Manager" };
+const userBio = { name: "Ellie Carter", jobTitle: "System Analyst" };
 
 const phoneContact = {
   iconId: 8,
@@ -32,7 +32,7 @@ const userContact = [phoneContact, emailContact, houseContact, linkedInContact];
 
 const userProfile = {
   profileSummary:
-    " Write few sentences about yourself. Start with years of experience or education. Put skills that will be able to contribute to the specific job. Bonus point if you have relevant particular specialty and achievement. Convince them you're the best choice. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "Write a few sentences about yourself. Start with years of experience or education. Put skills that will be able to contribute to the specific job. Bonus points if you have relevant specialties and achievements. Convince them you're the best choice. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
 };
 
 const education1 = {
@@ -51,7 +51,7 @@ const education2 = {
 const educationInfo = {
   type: "info",
   name: "education",
-  items: [education1, education2],
+  items: [education1],
 };
 
 const language1 = { name: "English", proficiency: "Native Speaker" };
@@ -68,12 +68,7 @@ const softSkillList = {
   type: "list",
   name: "softSkill",
   proficiencyType: "none", //none/score/level
-  items: [
-    "Project management",
-    "Problem-solving",
-    "Critical thinking",
-    "Decision making",
-  ],
+  items: ["Project management", "Problem-solving", "Decision making"],
 };
 
 const software1 = { name: "Microsoft Word", proficiency: "4" };
@@ -87,12 +82,13 @@ const softwareList = {
 };
 
 const experience1 = {
-  jobTitle: "Junior Programmer",
-  companyName: "ABC Corp",
-  location: "New York",
-  yearStart: "2016",
-  yearEnd: "2018",
-  jobSummary: "Create secure and functional code",
+  jobTitle: "Job Title Here",
+  companyName: "Company Name",
+  location: "Location",
+  yearStart: "20XX",
+  yearEnd: "20XX",
+  jobSummary:
+    "Put a brief summary of your duties in this paragraph and highlight details in the bullet list. Be accurate and concise. Remember: You are trying to show that your experience from previous jobs makes you ideal for this one.",
   jobDetails: [
     "Formulate program specifications and basic prototypes",
     "Integrate individual software solutions to higher level systems",
@@ -101,12 +97,13 @@ const experience1 = {
 };
 
 const experience2 = {
-  jobTitle: "Senior Programmer",
-  companyName: "WWW Corp",
-  location: "New York",
-  yearStart: "2016",
-  yearEnd: "2018",
-  jobSummary: "Create secure and functional code",
+  jobTitle: "Job Title Here",
+  companyName: "Company Name",
+  location: "Location",
+  yearStart: "20XX",
+  yearEnd: "20XX",
+  jobSummary:
+    "Put a brief summary of your duties in this paragraph and highlight details in the bullet list. Be accurate and concise. Remember: You are trying to show that your experience from previous jobs makes you ideal for this one.",
   jobDetails: [
     "Formulate program specifications and basic prototypes",
     "Integrate individual software solutions to higher level systems",
@@ -117,19 +114,19 @@ const experience2 = {
 const experience = { type: "experience", items: [experience1, experience2] };
 
 const reference1 = {
-  name: "David",
-  jobTitle: "Senior Programmer",
-  companyName: "Company ABC",
-  phone: "0811111111",
-  email: "david@mail.com",
+  name: "Put Name Here",
+  jobTitle: "Job Title",
+  companyName: "Company Name",
+  phone: "081-234-5678",
+  email: "reference@mail.com",
 };
 
 const reference2 = {
-  name: "John",
-  jobTitle: "Junior Programmer",
-  companyName: "Company BCD",
-  phone: "0811111111",
-  email: "john@mail.com",
+  name: "Put Name Here",
+  jobTitle: "Job Title",
+  companyName: "Company Name",
+  phone: "081-234-5678",
+  email: "reference@mail.com",
 };
 
 const references = { type: "reference", items: [reference1, reference2] };
@@ -152,54 +149,55 @@ const contactTemplate = {
 const infoItemTemplate = {
   name: "Put Degree/ Achievement/ Certification Here",
   institution: "Stanford University",
-  yearStart: 20,
-  yearEnd: 20,
+  yearStart: "20XX",
+  yearEnd: "20XX",
 };
 
 const infoTemplate = {
   type: "info",
-  name: "Info Name Here",
+  name: "Info Name",
   items: [infoItemTemplate],
 };
 
 const listProficiencyItemTemplate = {
-  name: "Item Name",
+  name: "List item",
   proficiency: "Beginner",
 };
 
 const listProficiencyTemplate = {
   type: "list",
-  name: "List Name Here",
+  name: "List Name",
   proficiencyType: "level", //none/score/level
   items: [listProficiencyItemTemplate],
 };
 
 const listBasicTemplate = {
   type: "list",
-  name: "softSkill",
+  name: "List Name",
   proficiencyType: "none", //none/score/level
-  items: ["List item name"],
+  items: ["List item"],
 };
 
-const listScoreItemTemplate = { name: "Item Name", proficiency: "4" };
+const listScoreItemTemplate = { name: "List item", proficiency: "4" };
 
 const listScoreTemplate = {
   type: "list",
-  name: "List name here",
+  name: "List name",
   proficiencyType: "score", //none/score/level
   items: [listScoreItemTemplate],
 };
 
 const experienceItemTemplate = {
-  jobTitle: "Senior Programmer",
-  companyName: "WWW Corp",
-  location: "New York",
-  yearStart: "2016",
-  yearEnd: "2018",
-  jobSummary: "Create secure and functional code",
+  jobTitle: "Job Title Here",
+  companyName: "Company Name",
+  location: "Location",
+  yearStart: "20XX",
+  yearEnd: "20XX",
+  jobSummary:
+    "Put a brief summary of your duties in this paragraph and highlight details in the bullet list. Be accurate and concise. Remember: You are trying to show that your experience from previous jobs makes you ideal for this one.",
   jobDetails: [
-    "Formulate program specifications and basic prototypes",
-    "Integrate individual software solutions to higher level systems",
+    "Put some details about your job here.",
+    "Put some details about your job here.",
   ],
 };
 
@@ -208,14 +206,13 @@ const experienceTemplate = {
   items: [experienceItemTemplate],
 };
 
-const experienceListTemplate =
-  "Formulate program specifications and basic prototypes";
+const experienceListTemplate = "Put some details about your job here.";
 
 const referenceItemTemplate = {
-  name: "John",
-  jobTitle: "Junior Programmer",
-  companyName: "Company BCD",
-  phone: "0811111111",
+  name: "Put Name Here",
+  jobTitle: "Job Title",
+  companyName: "Company Name",
+  phone: "081-234-5678",
   email: "john@mail.com",
 };
 

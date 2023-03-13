@@ -34,7 +34,7 @@ function FormList({
               inputValue={item}
             />
           </div>
-          <button onClick={handleRemove} className="remove">
+          <button onClick={handleRemove} className="removeBtn">
             X
           </button>
         </div>
@@ -58,7 +58,7 @@ function FormList({
               inputValue={item.proficiency}
             />
           </div>{" "}
-          <button onClick={handleRemove} className="remove">
+          <button onClick={handleRemove} className="removeBtn">
             X
           </button>
         </div>
@@ -87,7 +87,7 @@ function FormList({
               />
             </div>
           </div>
-          <button onClick={handleRemove} className="remove">
+          <button onClick={handleRemove} className="removeBtn">
             X
           </button>
         </div>

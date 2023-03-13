@@ -35,7 +35,7 @@ function FormLists({ id, list, updateData, addData, removeData }) {
         {" "}
         <div className="form-header ">
           {pickHeader(list.proficiencyType)}{" "}
-          <button onClick={handleRemove} className="remove">
+          <button onClick={handleRemove} className="removeBtn">
             X
           </button>
         </div>

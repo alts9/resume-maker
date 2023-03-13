@@ -59,7 +59,7 @@ function FormReference({
           />
         </div>
       </div>
-      <button onClick={handleRemove} className="remove">
+      <button onClick={handleRemove} className="removeBtn">
         X
       </button>
     </>

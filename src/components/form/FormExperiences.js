@@ -14,7 +14,7 @@ function FormExperiences({ experiences, id, updateData, addData, removeData }) {
         {" "}
         <div className="form-header">
           Experience{" "}
-          <button onClick={handleRemove} className="remove">
+          <button onClick={handleRemove} className="removeBtn">
             X
           </button>
         </div>

@@ -34,7 +34,7 @@ function FormExperienceList({
           inputOnChange={handleChange}
           inputValue={detailsItem}
         />
-        <button onClick={handleRemove} className="remove">
+        <button onClick={handleRemove} className="removeBtn">
           X
         </button>
       </div>

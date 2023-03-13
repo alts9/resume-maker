@@ -23,7 +23,7 @@ function FormInfos({ id, info, updateData, addData, removeData }) {
       <div className="form-info ">
         <div className="form-header">
           Form Info{" "}
-          <button onClick={handleRemove} className="remove">
+          <button onClick={handleRemove} className="removeBtn">
             X
           </button>
         </div>

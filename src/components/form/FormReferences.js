@@ -14,7 +14,7 @@ function FormReferences({ id, references, updateData, addData, removeData }) {
         {" "}
         <div className="form-header">
           Reference{" "}
-          <button onClick={handleRemove} className="remove">
+          <button onClick={handleRemove} className="removeBtn">
             X
           </button>
         </div>

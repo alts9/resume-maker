@@ -2,6 +2,9 @@ import React from "react";
 import FormExperiences from "./FormExperiences";
 import FormReferences from "./FormReferences";
 function FormRightContainer({ contents, updateData, addData, removeData }) {
+  function handleClick(e) {
+    addData({ category: e.target.value });
+  }
   return (
     <>
       <div className="form-large-header">Right Column</div>
@@ -31,8 +34,12 @@ function FormRightContainer({ contents, updateData, addData, removeData }) {
         }
       })}{" "}
       <div className="column-add-container ">
-        <button className="add">Add Experience</button>
-        <button className="add">Add Reference</button>
+        <button className="add" value="experienceSection" onClick={handleClick}>
+          Add Experience
+        </button>
+        <button className="add" value="referenceSection" onClick={handleClick}>
+          Add Reference
+        </button>
       </div>
     </>
   );
