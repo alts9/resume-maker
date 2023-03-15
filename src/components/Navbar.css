@@ -1,0 +1,31 @@
+.navbar-container {
+  display: flex;
+  padding: 10px 30px 10px 15px;
+  justify-content: space-between;
+  color: hsl(0, 0%, 95%);
+  background-color: hsl(0, 0%, 20%);
+}
+
+.main-logo {
+  font-weight: 800;
+  font-size: 1.75rem;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-container button {
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 95%);
+  border: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: grab;
+  padding: 5px 10px;
+}
+
+.nav-container button:hover {
+  text-decoration: underline;
+}

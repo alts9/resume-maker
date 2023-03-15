@@ -51,8 +51,8 @@ function FormContact({
               <option value="6 instagram-icon">Instagram</option>{" "}
               <option value="7 linkedIn-icon">LinkedIn</option>{" "}
               <option value="8 phone-icon">Phone</option>{" "}
-              <option value="9 website-icon">Website</option>{" "}
-              <option value="10 twitter-icon">Twitter</option>{" "}
+              <option value="9 twitter-icon">Twitter </option>{" "}
+              <option value="10 website-icon">Website</option>{" "}
               <option value="11 whatsapp-icon">Whatsapp</option>
             </select>
           </div>

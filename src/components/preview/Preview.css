@@ -45,6 +45,11 @@
   border-bottom: 3px solid black;
 }
 
+.contact img {
+  height: 15px;
+  padding-right: 3px;
+}
+
 .contact > div {
   display: flex;
   justify-content: center;

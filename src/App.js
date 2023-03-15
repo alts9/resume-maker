@@ -4,6 +4,8 @@ import "./App.css";
 import Form from "./components/form/Form";
 import Preview from "./components/preview/Preview";
 import React, { useState, useEffect } from "react";
+import { jsPDF } from "jspdf";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [resume, SetResume] = useState(userResume);
@@ -170,9 +172,22 @@ function App() {
   //   addData({ category: "referenceSection" });
   //   console.log(resume);
   // }, []);
-
+  function saveAsPDF() {
+    //multiplier used because jsPDF output doesn't match declared paper size
+    const multiplier = 0.945;
+    const report = new jsPDF({
+      orientation: "p",
+      unit: "pt",
+      format: [841.89 * multiplier, 1190.55 * multiplier],
+    });
+    report.html(document.querySelector(".preview-container")).then(() => {
+      report.save("preview.pdf");
+    });
+  }
   return (
     <>
+      <Navbar saveAsPDF={saveAsPDF}/>
+      
       <div className="main-container">
         <Form
           resume={resume}
