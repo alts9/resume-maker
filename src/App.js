@@ -1,14 +1,20 @@
-import { userResume, objectTemplate } from "./modules/SampleObject";
-import logo from "./logo.svg";
 import "./App.css";
+import { jsPDF } from "jspdf";
+import { defaultResume, objectTemplate } from "./modules/SampleObject";
+import Footer from "./components/Footer";
 import Form from "./components/form/Form";
+import Navbar from "./components/Navbar";
 import Preview from "./components/preview/Preview";
 import React, { useState, useEffect } from "react";
-import { jsPDF } from "jspdf";
-import Navbar from "./components/Navbar";
 
 function App() {
-  const [resume, SetResume] = useState(userResume);
+  const [resume, SetResume] = useState(
+    JSON.parse(localStorage.getItem("savedResume")) || defaultResume
+  );
+
+  useEffect(() => {
+    localStorage.setItem("savedResume", JSON.stringify(resume));
+  }, [resume]);
 
   function removeData({ category, mainId, subId, subSubId } = {}) {
     const newResume = { ...resume };
@@ -166,13 +172,7 @@ function App() {
     SetResume(newResume);
   }
 
-  //leftContentIndex, type
-  // console.log(resume.rightContents);
-  // useEffect(() => {
-  //   addData({ category: "referenceSection" });
-  //   console.log(resume);
-  // }, []);
-  function saveAsPDF() {
+  function saveAsPDF(callback) {
     //multiplier used because jsPDF output doesn't match declared paper size
     const multiplier = 0.945;
     const report = new jsPDF({
@@ -180,14 +180,23 @@ function App() {
       unit: "pt",
       format: [841.89 * multiplier, 1190.55 * multiplier],
     });
+    toggleBorder();
     report.html(document.querySelector(".preview-container")).then(() => {
       report.save("preview.pdf");
     });
+    const myTimeout = setTimeout(toggleBorder, 2000);
   }
+
+  function toggleBorder() {
+    document
+      .querySelector(".preview-container")
+      .classList.toggle("show-border");
+    document.querySelector(".resume-content").classList.toggle("show-border");
+  }
+
   return (
     <>
-      <Navbar saveAsPDF={saveAsPDF}/>
-      
+      <Navbar saveAsPDF={saveAsPDF} />
       <div className="main-container">
         <Form
           resume={resume}
@@ -198,6 +207,7 @@ function App() {
         />
         <Preview resume={resume} />
       </div>
+      <Footer />
     </>
   );
 }

@@ -2,16 +2,16 @@ import React from "react";
 import PreviewContact from "./PreviewContact";
 import behance from "../../icons/behance.png";
 import dribbble from "../../icons/dribbble.png";
-import envelope from "../../icons/envelope-regular.png";
-import facebook from "../../icons/facebook-square.png";
+import envelope from "../../icons/envelope.png";
+import facebook from "../../icons/facebook.png";
 import github from "../../icons/github.png";
-import house from "../../icons/home-solid.png";
+import house from "../../icons/home.png";
 import instagram from "../../icons/instagram.png";
 import linkedin from "../../icons/linkedin.png";
-import phone from "../../icons/phone-alt-solid.png";
+import phone from "../../icons/phone.png";
 import twitter from "../../icons/twitter.png";
 import whatsapp from "../../icons/whatsapp.png";
-import website from "../../icons/desktop-solid.png";
+import website from "../../icons/desktop.png";
 
 function PreviewContacts({ contact }) {
   const icons = [

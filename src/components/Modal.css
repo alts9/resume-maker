@@ -1,0 +1,51 @@
+.popup-content {
+  padding: 0px;
+  border: none;
+}
+
+.modal {
+  font-size: 13px;
+}
+.modal > .header {
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 10px;
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 95%);
+  font-weight: 600;
+}
+
+.modal > div {
+  padding: 10px 20px 5px 10px;
+  color: hsl(0, 0%, 15%);
+}
+
+.modal > div:last-child {
+  padding-bottom: 20px;
+}
+
+.modal > div > .header {
+  font-size: 16px;
+  padding-bottom: 3px;
+  font-weight: 600;
+}
+
+.modal > div > .content {
+  width: 100%;
+}
+
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  right: 12px;
+  top: 12px;
+  font-size: 20px;
+  padding: 1px;
+  width: 18px;
+  line-height: 16px;
+  border: 1px solid #cfcece;
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 95%);
+}

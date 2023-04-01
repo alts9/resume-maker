@@ -7,6 +7,7 @@
   flex-basis: 160mm;
   padding-left: 15px;
   padding-right: 15px;
+  border: 1px solid hsl(0, 100%, 85%);
 }
 
 label {
@@ -116,7 +117,7 @@ textarea {
 .add-button-container {
   width: 512px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-bottom: 6px;
 }
 

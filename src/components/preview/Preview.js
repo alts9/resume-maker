@@ -9,8 +9,8 @@ import PreviewRightContainers from "./PreviewRightContainers";
 function Preview({ resume }) {
   return (
     <>
-      <div className="preview-container">
-        <div className="resume-content">
+      <div className="preview-container show-border">
+        <div className="resume-content show-border">
           <section className="header">
             <PreviewBio bio={resume.bio} />
           </section>

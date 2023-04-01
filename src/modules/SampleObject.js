@@ -1,4 +1,4 @@
-const userBio = { name: "Ellie Carter", jobTitle: "System Analyst" };
+const userBio = { name: "John Smith", jobTitle: "Front End Developer" };
 
 const phoneContact = {
   iconId: 8,
@@ -10,21 +10,21 @@ const phoneContact = {
 const emailContact = {
   iconId: 2,
   iconName: "envelope-icon",
-  data: "elliecarter@mail.com",
+  data: "john_smith@mail.com",
   link: "",
 };
 
 const houseContact = {
   iconId: 5,
   iconName: "house-icon",
-  data: "Austin, TX",
+  data: "San Francisco, CA",
   link: "",
 };
 
 const linkedInContact = {
   iconId: 7,
   iconName: "linkedIn-icon",
-  data: "/in/ellie_carter",
+  data: "/in/john_smith",
   link: "https://www.linkedin.com/in/John_john123",
 };
 
@@ -37,15 +37,9 @@ const userProfile = {
 
 const education1 = {
   name: "Bachelor of Information Technology",
-  institution: "Stanford University",
+  institution: "University Name",
   yearStart: 2012,
   yearEnd: 2016,
-};
-const education2 = {
-  name: "Master of Information Technology",
-  institution: "Stanford University",
-  yearStart: 2016,
-  yearEnd: 2018,
 };
 
 const educationInfo = {
@@ -131,7 +125,7 @@ const reference2 = {
 
 const references = { type: "reference", items: [reference1, reference2] };
 
-const userResume = {
+const defaultResume = {
   bio: userBio,
   contact: userContact,
   profile: userProfile,
@@ -231,4 +225,4 @@ const objectTemplate = {
   experienceListTemplate,
   referenceTemplate,
 };
-export { userResume, objectTemplate };
+export { defaultResume, objectTemplate };
